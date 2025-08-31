@@ -27,34 +27,35 @@
                     <a href="courses.html" class="hover:opacity-80 transition-colors text-black">Courses</a>
                     <a href="teachers.html" class="hover:opacity-80 transition-colors text-black">Teachers</a>
                     <a href="#contact" class="hover:opacity-80 transition-colors text-black">Contact</a>
+                    <!-- Language Toggle Button -->
+                    <button id="language-toggle" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
+                        <span id="current-lang">EN</span>
+                    </button>
                 </div>
                 
-                <div class="hidden md:block">
-                    <a href="#signup" class="text-white px-6 py-2 rounded-full text-lg font-semibold hover:opacity-90 transition-all" style="background-color: #1D4B3B; color: #D4A933 !important;">
-                        Free Test
-                    </a>
-                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">
+    <section class="pt-32 pb-20" style="background-color: #1D4B3B;">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-6xl font-bold mb-6" style="color: #1D4B3B;">
+            <h1 class="text-6xl font-bold mb-6 text-white">
                 MASTER ENGLISH WITH<br>
-                <span style="color: #D4A933;">CONFIDENCE</span><br>
-                ACHIEVE SUCCESS! 
+                <span style="color: #D4A933;">CONFIDENCE</span> AND <span style="color: #D4A933;">SUCCESS</span>!
             </h1>
-            <p class="text-xl text-black mb-8 max-w-3xl mx-auto">
+            <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
                 Join thousands of learners who trust us to ignite passion for English mastery. Our proven methodology combines fun, personalized coaching, and real-world skills to help you conquer IELTS and unlock your future potential!
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#about" class="text-white px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all" style="background-color: #1D4B3B;">
-                    EXPLORE NOW
+                <a href="#about" class="bg-gradient-to-r from-white to-gray-50 text-gray-800 px-8 py-4 rounded-full text-lg font-bold hover:from-gray-50 hover:to-white hover:text-gray-900 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 hover:border-gray-300 shadow-lg">
+                    <span class="relative z-10">EXPLORE NOW</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 hover:opacity-20 transition-opacity duration-300 rounded-full"></div>
                 </a>
-                <a href="#signup" class="px-8 py-4 rounded-full text-lg font-semibold hover:text-white transition-all" style="border: 2px solid #1D4B3B; color: #1D4B3B;" onmouseover="this.style.backgroundColor='#1D4B3B'" onmouseout="this.style.backgroundColor='transparent'">
-                    Free Assessment
+                <a href="#signup" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-8 py-4 rounded-full text-lg font-bold hover:from-yellow-500 hover:to-yellow-600 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 border-2 border-yellow-300 hover:border-yellow-400 shadow-lg relative overflow-hidden">
+                    <span class="relative z-10">FREE ASSESSMENT</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 hover:opacity-30 transition-opacity duration-300 rounded-full"></div>
+                    <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
                 </a>
             </div>
         </div>
@@ -125,7 +126,7 @@
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4" style="border-left-color: #D4A933;">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4 testimonial-card" style="border-left-color: #D4A933;">
                     <div class="flex items-center mb-4">
                         <div class="flex" style="color: #D4A933;">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
@@ -145,7 +146,7 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-black mb-6 leading-relaxed">
+                    <p class="text-black mb-6 leading-relaxed testimonial-text">
                         "Ở 'Té' em không học IELTS mà học mindset, học lối tư duy cởi mở thông qua các buổi debate và 'bị bắt' nói. Việc học tiếng Anh của em dễ dàng và đỡ áp lực hơn hẳn."
                     </p>
                     <div class="flex items-center">
@@ -153,15 +154,15 @@
                             <span class="text-white font-semibold">TN</span>
                         </div>
                         <div>
-                            <p class="font-semibold" style="color: #1D4B3B;">Tran Thi Thao Nguyen</p>
-                            <p class="text-sm font-semibold" style="color: #D4A933;">IELTS 7.0</p>
+                            <p class="font-semibold testimonial-name" style="color: #1D4B3B;">Tran Thi Thao Nguyen</p>
+                            <p class="text-sm font-semibold testimonial-title" style="color: #D4A933;">IELTS 7.0</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4" style="border-left-color: #D4A933;">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4 testimonial-card" style="border-left-color: #3B82F6;">
                     <div class="flex items-center mb-4">
-                        <div class="flex" style="color: #D4A933;">
+                        <div class="flex" style="color: #3B82F6;">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
                                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
                             </svg>
@@ -179,23 +180,23 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-black mb-6 leading-relaxed">
+                    <p class="text-black mb-6 leading-relaxed testimonial-text">
                         "Ở Té mình không chỉ được học IELTS, mà còn được chỉ cách sử dụng ngôn ngữ sao cho được hay, được tự nhiên; còn là thái độ học và cải thiện lối tư duy."
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: #D4A933;">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: #3B82F6;">
                             <span class="text-white font-semibold">NT</span>
                         </div>
                         <div>
-                            <p class="font-semibold" style="color: #1D4B3B;">Nguyễn Thiện Anh Thi</p>
-                            <p class="text-sm font-semibold" style="color: #D4A933;">Student of TES</p>
+                            <p class="font-semibold testimonial-name" style="color: #1D4B3B;">Nguyễn Thiện Anh Thi</p>
+                            <p class="text-sm font-semibold testimonial-title" style="color: #3B82F6;">Student of TES</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4" style="border-left-color: #D4A933;">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4 testimonial-card" style="border-left-color: #10B981;">
                     <div class="flex items-center mb-4">
-                        <div class="flex" style="color: #D4A933;">
+                        <div class="flex" style="color: #10B981;">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
                                 <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
                             </svg>
@@ -213,16 +214,16 @@
                             </svg>
                         </div>
                     </div>
-                    <p class="text-black mb-6 leading-relaxed">
+                    <p class="text-black mb-6 leading-relaxed testimonial-text">
                         "Trung tâm mang lại cho mình cảm giác thoải mái khi học. Học theo cách đúng nghĩa tiếng Anh tư duy. TES is my second home! 🫶🏻🥰"
                     </p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: #D4A933;">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: #10B981;">
                             <span class="text-white font-semibold">HH</span>
                         </div>
                         <div>
-                            <p class="font-semibold" style="color: #1D4B3B;">Hong Hanh</p>
-                            <p class="text-sm font-semibold" style="color: #D4A933;">Student of TES</p>
+                            <p class="font-semibold testimonial-name" style="color: #1D4B3B;">Hong Hanh</p>
+                            <p class="text-sm font-semibold testimonial-title" style="color: #10B981;">Student of TES</p>
                         </div>
                     </div>
                 </div>
@@ -260,7 +261,7 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <input type="email" placeholder="Enter your email address" class="flex-1 max-w-md px-6 py-4 rounded-full text-lg border-2 border-white bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-80 focus:outline-none focus:border-yellow-300 focus:bg-opacity-30 transition-all" style="backdrop-filter: blur(10px);">
                 <button type="submit" class="px-8 py-4 rounded-full text-lg font-bold bg-yellow-400 text-gray-900 hover:bg-yellow-300 transform hover:scale-105 transition-all shadow-lg" style="background-color: #D4A933;">
-                    SIGN UP FOR FREE ASSESSMENT
+                    BOOK A FREE ASSESSMENT
                 </button>
             </div>
         </div>
@@ -437,6 +438,111 @@
     </footer>
 
     <script>
+        // Language translations
+        const translations = {
+            en: {
+                testimonials: [
+                    {
+                        text: "\"At 'Té' I didn't study IELTS, I studied mindset, I studied open-minded thinking through debates and being forced to speak. My English learning became easier and much less stressful.\"",
+                        name: "Tran Thi Thao Nguyen",
+                        title: "IELTS 7.0"
+                    },
+                    {
+                        text: "\"At Té I not only got to study IELTS, but I was also taught how to use language in a way that's beautiful, natural; it was also an attitude towards learning and improving thinking.\"",
+                        name: "Nguyễn Thiện Anh Thi",
+                        title: "Student of TES"
+                    },
+                    {
+                        text: "\"The center gave me a comfortable feeling when learning. Learning in a truly English way of thinking. TES is my second home! 🫶🏻🥰\"",
+                        name: "Hong Hanh",
+                        title: "Student of TES"
+                    }
+                ]
+            },
+            vi: {
+                testimonials: [
+                    {
+                        text: "\"Ở 'Té' em không học IELTS mà học mindset, học lối tư duy cởi mở thông qua các buổi debate và 'bị bắt' nói. Việc học tiếng Anh của em dễ dàng và đỡ áp lực hơn hẳn.\"",
+                        name: "Tran Thi Thao Nguyen",
+                        title: "IELTS 7.0"
+                    },
+                    {
+                        text: "\"Ở Té mình không chỉ được học IELTS, mà còn được chỉ cách sử dụng ngôn ngữ sao cho được hay, được tự nhiên; còn là thái độ học và cải thiện lối tư duy.\"",
+                        name: "Nguyễn Thiện Anh Thi",
+                        title: "Student of TES"
+                    },
+                    {
+                        text: "\"Trung tâm mang lại cho mình cảm giác thoải mái khi học. Học theo cách đúng nghĩa tiếng Anh tư duy. TES is my second home! 🫶🏻🥰\"",
+                        name: "Hong Hanh",
+                        title: "Student of TES"
+                    }
+                ]
+            }
+        };
+
+        // Current language state
+        let currentLanguage = 'en';
+
+        // Language toggle functionality
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'vi' : 'en';
+            updateLanguage();
+            updateToggleButton();
+        }
+
+        function updateLanguage() {
+            // Update only the main testimonials section
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+            testimonialCards.forEach((card, index) => {
+                if (translations[currentLanguage].testimonials && translations[currentLanguage].testimonials[index]) {
+                    const testimonial = translations[currentLanguage].testimonials[index];
+
+                    // Update text within this specific card
+                    const textElement = card.querySelector('.testimonial-text');
+                    const nameElement = card.querySelector('.testimonial-name');
+                    const titleElement = card.querySelector('.testimonial-title');
+
+                    if (textElement) {
+                        textElement.textContent = testimonial.text;
+                    }
+                    if (nameElement) {
+                        nameElement.textContent = testimonial.name;
+                    }
+                    if (titleElement) {
+                        titleElement.textContent = testimonial.title;
+                    }
+                }
+            });
+        }
+
+        function updateToggleButton() {
+            const button = document.getElementById('current-lang');
+            if (button) {
+                button.textContent = currentLanguage.toUpperCase();
+            }
+        }
+
+        // Initialize language toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageToggle = document.getElementById('language-toggle');
+            if (languageToggle) {
+                languageToggle.addEventListener('click', toggleLanguage);
+            }
+            
+            // Add data attributes to testimonials for easier identification
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            testimonialCards.forEach((card, index) => {
+                const textElement = card.querySelector('p');
+                const nameElement = card.querySelector('.font-semibold');
+                const titleElement = card.querySelector('.text-sm.font-semibold');
+                
+                if (textElement) textElement.classList.add('testimonial-text');
+                if (nameElement && !nameElement.classList.contains('text-sm')) nameElement.classList.add('testimonial-name');
+                if (titleElement) titleElement.classList.add('testimonial-title');
+            });
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

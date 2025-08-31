@@ -29,6 +29,10 @@
                     <a href="courses.html" class="hover:opacity-80 transition-colors text-black">Courses</a>
                     <a href="teachers.html" class="hover:opacity-80 transition-colors text-black">Teachers</a>
                     <a href="#contact" class="hover:opacity-80 transition-colors text-black">Contact</a>
+                    <!-- Language Toggle Button -->
+                    <button id="language-toggle" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
+                        <span id="current-lang">EN</span>
+                    </button>
                 </div>
                 
                 <div class="hidden md:block">
@@ -40,8 +44,20 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20" style="background-color: #1D4B3B;">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="font-heading text-6xl font-bold text-white mb-6">
+                OUR <span style="color: #D4A933;">COURSES</span>
+            </h1>
+            <p class="text-xl text-white max-w-3xl mx-auto">
+                Discover our comprehensive English learning programs designed to take you from beginner to IELTS mastery
+            </p>
+        </div>
+    </section>
+
     <!-- Courses Section with Sidebar -->
-    <section class="py-20">
+    <section class="py-12">
         <div class="max-w-7xl mx-auto px-6">
             
             <!-- Mobile Menu Toggle -->
@@ -578,6 +594,41 @@
     </footer>
 
     <script>
+        // Language translations (empty for courses page as it doesn't have Vietnamese content)
+        const translations = {
+            en: {},
+            vi: {}
+        };
+
+        // Current language state
+        let currentLanguage = 'en';
+
+        // Language toggle functionality
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'vi' : 'en';
+            updateLanguage();
+            updateToggleButton();
+        }
+
+        function updateLanguage() {
+            // No content to translate on courses page
+        }
+
+        function updateToggleButton() {
+            const button = document.getElementById('current-lang');
+            if (button) {
+                button.textContent = currentLanguage.toUpperCase();
+            }
+        }
+
+        // Initialize language toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageToggle = document.getElementById('language-toggle');
+            if (languageToggle) {
+                languageToggle.addEventListener('click', toggleLanguage);
+            }
+        });
+
         // Mobile menu toggle functionality
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileSidebar = document.getElementById('mobile-sidebar');

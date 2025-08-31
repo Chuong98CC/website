@@ -7,6 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        /* Scroll target positioning */
+        .scroll-target {
+            position: relative;
+            top: -120px; /* Offset for fixed navbar */
+            visibility: hidden;
+        }
     </style>
 </head>
 <body class="font-primary text-text bg-white">
@@ -25,24 +32,23 @@
                 </div>
                 
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="font-semibold text-black hover:opacity-80 transition-colors">Home</a>
-                    <a href="courses.html" class="hover:opacity-80 transition-colors text-black">Courses</a>
-                    <a href="teachers.html" class="hover:opacity-80 transition-colors text-black">Teachers</a>
-                    <a href="#contact" class="hover:opacity-80 transition-colors text-black">Contact</a>
-                    <!-- Language Toggle Button -->
-                    <button id="language-toggle" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
-                        <span id="current-lang">EN</span>
-                    </button>
+                    <a href="index.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
+                    <a href="courses.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
+                    <a href="teachers.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
+                    <a href="#contact" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
                 </div>
                 
-                <div class="hidden md:block">
-                    <a href="#signup" class="text-white px-6 py-2 rounded-full text-lg font-semibold hover:opacity-90 transition-all" style="background-color: #1D4B3B; color: #D4A933 !important;">
-                        Free Test
-                    </a>
-                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Language Toggle Button - Fixed Position -->
+    <button id="language-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
+        <span id="current-lang" class="flex items-center space-x-2">
+            <span id="flag-icon">🇺🇸</span>
+            <span id="lang-text">EN</span>
+        </span>
+    </button>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20" style="background-color: #1D4B3B;">
@@ -76,58 +82,58 @@
                     <div class="bg-white rounded-2xl shadow-lg p-6">
                         <h3 class="text-xl font-bold text-gray-900 mb-6">Course Levels</h3>
                         <nav class="space-y-2">
-                        <a href="#candy" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-pink-50 transition-colors group">
+                        <a href="#candy-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-green-50 transition-colors group">
                             <span class="text-2xl">🍭</span>
                             <div>
-                                <div class="font-semibold text-gray-900 group-hover:text-pink-600">Level Candy</div>
+                                <div class="font-semibold text-gray-900 group-hover:text-green-500">Level Candy</div>
                                 <div class="text-sm text-gray-500">Elementary (Band 0-2.5)</div>
                             </div>
                         </a>
                         
-                        <a href="#cookies" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-orange-50 transition-colors group">
+                        <a href="#cookies-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors group">
                             <span class="text-2xl">🍪</span>
                             <div>
-                                <div class="font-semibold text-gray-900 group-hover:text-orange-600">Level Cookies</div>
+                                <div class="font-semibold text-gray-900 group-hover:text-blue-500">Level Cookies</div>
                                 <div class="text-sm text-gray-500">Fundamental (Band 2.5-3.5)</div>
                             </div>
                         </a>
                         
-                        <a href="#donuts" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-50 transition-colors group">
+                        <a href="#donuts-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-indigo-50 transition-colors group">
                             <span class="text-2xl">🍩</span>
                             <div>
-                                <div class="font-semibold text-gray-900 group-hover:text-purple-600">Level Donuts</div>
+                                <div class="font-semibold text-gray-900 group-hover:text-indigo-500">Level Donuts</div>
                                 <div class="text-sm text-gray-500">Step up (Band 3.5-4.5)</div>
                             </div>
                         </a>
                         
-                        <a href="#bagels" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-green-50 transition-colors group">
+                        <a href="#bagels-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-50 transition-colors group">
                             <span class="text-2xl">🥯</span>
                             <div>
-                                <div class="font-semibold text-gray-900 group-hover:text-green-600">Level Bagels</div>
+                                <div class="font-semibold text-gray-900 group-hover:text-purple-500">Level Bagels</div>
                                 <div class="text-sm text-gray-500">Intermediate (Band 4.5-5.0+)</div>
                             </div>
                         </a>
                         
-                        <a href="#burgers" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-red-50 transition-colors group">
+                        <a href="#burgers-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-pink-50 transition-colors group">
                             <span class="text-2xl">🍔</span>
                             <div>
-                                <div class="font-semibold text-gray-900 group-hover:text-red-600">Level Burgers</div>
+                                <div class="font-semibold text-gray-900 group-hover:text-pink-500">Level Burgers</div>
                                 <div class="text-sm text-gray-500">Booster (Band 5.5+)</div>
                             </div>
                         </a>
                         
-                        <a href="#pizzas" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors group">
+                        <a href="#pizzas-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-red-50 transition-colors group">
                             <span class="text-2xl">🍕</span>
                             <div>
-                                <div class="font-semibold text-gray-900 group-hover:text-blue-600">Level Pizzas</div>
+                                <div class="font-semibold text-gray-900 group-hover:text-red-500">Level Pizzas</div>
                                 <div class="text-sm text-gray-500">Advanced (Band 6.5+)</div>
                             </div>
                         </a>
                         
-                        <a href="#intensive" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                        <a href="#intensive-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-orange-50 transition-colors group">
                             <span class="text-2xl">🚀</span>
                             <div>
-                                <div class="font-semibold text-gray-900 group-hover:text-gray-600">Level Intensive</div>
+                                <div class="font-semibold text-gray-900 group-hover:text-orange-500">Level Intensive</div>
                                 <div class="text-sm text-gray-500">Conquer IELTS</div>
                             </div>
                         </a>
@@ -147,58 +153,58 @@
                             </button>
                         </div>
                         <nav class="space-y-2">
-                            <a href="#candy" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-pink-50 transition-colors group mobile-menu-item">
+                            <a href="#candy-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-green-50 transition-colors group mobile-menu-item">
                                 <span class="text-2xl">🍭</span>
                                 <div>
-                                    <div class="font-semibold text-gray-900 group-hover:text-pink-600">Level Candy</div>
+                                    <div class="font-semibold text-gray-900 group-hover:text-green-500">Level Candy</div>
                                     <div class="text-sm text-gray-500">Elementary (Band 0-2.5)</div>
                                 </div>
                             </a>
                             
-                            <a href="#cookies" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-orange-50 transition-colors group mobile-menu-item">
+                            <a href="#cookies-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors group mobile-menu-item">
                                 <span class="text-2xl">🍪</span>
                                 <div>
-                                    <div class="font-semibold text-gray-900 group-hover:text-orange-600">Level Cookies</div>
+                                    <div class="font-semibold text-gray-900 group-hover:text-blue-500">Level Cookies</div>
                                     <div class="text-sm text-gray-500">Fundamental (Band 2.5-3.5)</div>
                                 </div>
                             </a>
                             
-                            <a href="#donuts" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-50 transition-colors group mobile-menu-item">
+                            <a href="#donuts-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-indigo-50 transition-colors group mobile-menu-item">
                                 <span class="text-2xl">🍩</span>
                                 <div>
-                                    <div class="font-semibold text-gray-900 group-hover:text-purple-600">Level Donuts</div>
+                                    <div class="font-semibold text-gray-900 group-hover:text-indigo-500">Level Donuts</div>
                                     <div class="text-sm text-gray-500">Step up (Band 3.5-4.5)</div>
                                 </div>
                             </a>
                             
-                            <a href="#bagels" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-green-50 transition-colors group mobile-menu-item">
+                            <a href="#bagels-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-purple-50 transition-colors group mobile-menu-item">
                                 <span class="text-2xl">🥯</span>
                                 <div>
-                                    <div class="font-semibold text-gray-900 group-hover:text-green-600">Level Bagels</div>
+                                    <div class="font-semibold text-gray-900 group-hover:text-purple-500">Level Bagels</div>
                                     <div class="text-sm text-gray-500">Intermediate (Band 4.5-5.0+)</div>
                                 </div>
                             </a>
                             
-                            <a href="#burgers" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-red-50 transition-colors group mobile-menu-item">
+                            <a href="#burgers-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-pink-50 transition-colors group mobile-menu-item">
                                 <span class="text-2xl">🍔</span>
                                 <div>
-                                    <div class="font-semibold text-gray-900 group-hover:text-red-600">Level Burgers</div>
+                                    <div class="font-semibold text-gray-900 group-hover:text-pink-500">Level Burgers</div>
                                     <div class="text-sm text-gray-500">Booster (Band 5.5+)</div>
                                 </div>
                             </a>
                             
-                            <a href="#pizzas" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-blue-50 transition-colors group mobile-menu-item">
+                            <a href="#pizzas-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-red-50 transition-colors group mobile-menu-item">
                                 <span class="text-2xl">🍕</span>
                                 <div>
-                                    <div class="font-semibold text-gray-900 group-hover:text-blue-600">Level Pizzas</div>
+                                    <div class="font-semibold text-gray-900 group-hover:text-red-500">Level Pizzas</div>
                                     <div class="text-sm text-gray-500">Advanced (Band 6.5+)</div>
                                 </div>
                             </a>
                             
-                            <a href="#intensive" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group mobile-menu-item">
+                            <a href="#intensive-anchor" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-orange-50 transition-colors group mobile-menu-item">
                                 <span class="text-2xl">🚀</span>
                                 <div>
-                                    <div class="font-semibold text-gray-900 group-hover:text-gray-600">Level Intensive</div>
+                                    <div class="font-semibold text-gray-900 group-hover:text-orange-500">Level Intensive</div>
                                     <div class="text-sm text-gray-500">Conquer IELTS</div>
                                 </div>
                             </a>
@@ -211,11 +217,11 @@
             <div class="grid gap-12">
                 
                 <!-- Level Candy -->
-                                <!-- Level Candy -->
-                <div id="candy" class="bg-gradient-to-br from-pink-50 to-red-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div id="candy-anchor" class="scroll-target"></div>
+                <div id="candy" class="bg-gradient-to-br from-green-200 via-green-300 to-blue-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-2xl flex items-center justify-center mr-6">
-                            <span class="text-white font-bold text-xl">�</span>
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-300 to-blue-400 rounded-2xl flex items-center justify-center mr-6">
+                            <span class="text-white font-bold text-xl">🍭</span>
                         </div>
                         <div>
                             <h3 class="text-3xl font-bold mb-2" style="color: #1D4B3B;">Level Candy</h3>
@@ -251,9 +257,10 @@
                 </div>
 
                 <!-- Level Cookies -->
-                <div id="cookies" class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div id="cookies-anchor" class="scroll-target"></div>
+                <div id="cookies" class="bg-gradient-to-br from-blue-200 via-blue-300 to-indigo-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mr-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-300 to-indigo-400 rounded-2xl flex items-center justify-center mr-6">
                             <span class="text-white font-bold text-2xl">🍪</span>
                         </div>
                         <div>
@@ -290,9 +297,10 @@
                 </div>
 
                 <!-- Level Donuts -->
-                <div id="donuts" class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div id="donuts-anchor" class="scroll-target"></div>
+                <div id="donuts" class="bg-gradient-to-br from-indigo-200 via-indigo-300 to-purple-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mr-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-indigo-300 to-purple-400 rounded-2xl flex items-center justify-center mr-6">
                             <span class="text-white font-bold text-2xl">🍩</span>
                         </div>
                         <div>
@@ -329,9 +337,10 @@
                 </div>
 
                 <!-- Level Bagels -->
-                <div id="bagels" class="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div id="bagels-anchor" class="scroll-target"></div>
+                <div id="bagels" class="bg-gradient-to-br from-purple-200 via-purple-300 to-pink-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mr-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-300 to-pink-400 rounded-2xl flex items-center justify-center mr-6">
                             <span class="text-white font-bold text-2xl">🥯</span>
                         </div>
                         <div>
@@ -368,9 +377,10 @@
                 </div>
 
                 <!-- Level Burgers -->
-                <div id="burgers" class="bg-gradient-to-br from-red-50 to-pink-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div id="burgers-anchor" class="scroll-target"></div>
+                <div id="burgers" class="bg-gradient-to-br from-pink-200 via-pink-300 to-red-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center mr-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-300 to-red-400 rounded-2xl flex items-center justify-center mr-6">
                             <span class="text-white font-bold text-2xl">🍔</span>
                         </div>
                         <div>
@@ -407,9 +417,10 @@
                 </div>
 
                 <!-- Level Pizzas -->
-                <div id="pizzas" class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div id="pizzas-anchor" class="scroll-target"></div>
+                <div id="pizzas" class="bg-gradient-to-br from-red-200 via-red-300 to-orange-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-red-300 to-orange-400 rounded-2xl flex items-center justify-center mr-6">
                             <span class="text-white font-bold text-2xl">🍕</span>
                         </div>
                         <div>
@@ -446,9 +457,10 @@
                 </div>
 
                 <!-- Level Intensive -->
-                <div id="intensive" class="bg-gradient-to-br from-gray-900 to-gray-700 text-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+                <div id="intensive-anchor" class="scroll-target"></div>
+                <div id="intensive" class="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 text-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
                     <div class="flex items-center mb-6">
-                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mr-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mr-6">
                             <span class="text-white font-bold text-2xl">🚀</span>
                         </div>
                         <div>
@@ -594,10 +606,305 @@
     </footer>
 
     <script>
-        // Language translations (empty for courses page as it doesn't have Vietnamese content)
+        // Language translations
         const translations = {
-            en: {},
-            vi: {}
+            en: {
+                title: "Courses - The English Studio Da Nang",
+                heroTitle: "OUR <span style='color: #D4A933;'>COURSES</span>",
+                heroDescription: "Discover our comprehensive English learning programs designed to take you from beginner to IELTS mastery",
+                courseLevels: "Course Levels",
+                courseMenu: "Course Menu",
+                ctaTitle: "🚀 READY TO START YOUR IELTS JOURNEY?",
+                ctaSubtitle: "Get Your FREE Level Assessment Today:",
+                ctaFeatures: [
+                    "Personalized Course Recommendation",
+                    "Expert Level Assessment",
+                    "Custom Study Plan"
+                ],
+                ctaButton: "GET FREE ASSESSMENT",
+                ctaPlaceholder: "Enter your email address",
+                contactTitle: "Get in touch",
+                followUs: "Follow us",
+                copyright: "© 2025 The English Studio Da Nang. All rights reserved.",
+                courseNames: {
+                    candy: "Level Candy",
+                    cookies: "Level Cookies",
+                    donuts: "Level Donuts",
+                    bagels: "Level Bagels",
+                    burgers: "Level Burgers",
+                    pizzas: "Level Pizzas",
+                    intensive: "Level Intensive"
+                },
+                courseSubtitles: {
+                    candy: "Beginner Level - IELTS Foundation",
+                    cookies: "Elementary Level - IELTS Introduction",
+                    donuts: "Intermediate Level - IELTS Progress",
+                    bagels: "Upper Intermediate - IELTS Mastery",
+                    burgers: "Advanced Level - IELTS Excellence",
+                    pizzas: "Expert Level - IELTS Perfection",
+                    intensive: "Elite Level - IELTS Conqueror"
+                },
+                sidebarSubtitles: {
+                    candy: "Elementary (Band 0-2.5)",
+                    cookies: "Fundamental (Band 2.5-3.5)",
+                    donuts: "Step up (Band 3.5-4.5)",
+                    bagels: "Intermediate (Band 4.5-5.0+)",
+                    burgers: "Booster (Band 5.5+)",
+                    pizzas: "Advanced (Band 6.5+)",
+                    intensive: "Conquer IELTS"
+                },
+                sidebarSubtitles: {
+                    candy: "Elementary (Band 0-2.5)",
+                    cookies: "Fundamental (Band 2.5-3.5)",
+                    donuts: "Step up (Band 3.5-4.5)",
+                    bagels: "Intermediate (Band 4.5-5.0+)",
+                    burgers: "Booster (Band 5.5+)",
+                    pizzas: "Advanced (Band 6.5+)",
+                    intensive: "Conquer IELTS"
+                },
+                courseDescriptions: {
+                    candy: {
+                        target: "For:",
+                        targetText: "Not for complete beginners or those with no foundation. For those who have never been exposed to IELTS or have minimal English contact.",
+                        objective: "Objective:",
+                        objectiveText: "Introduce and orient towards IELTS. Focus on reviewing basic grammar points, supplementing basic vocabulary by topic, and IELTS-related vocabulary.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Get familiar with simple exercises, short passages, practice analysis and understanding question requirements",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Get familiar with simple questions, focus on idea development, pronunciation and reflexes",
+                        writing: "✍️ Writing",
+                        writingText: "Practice writing complete sentences, practice developing ideas. Distinguish between spoken and written language in IELTS",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 2.5 - Solid foundation for subsequent levels"
+                    },
+                    cookies: {
+                        target: "For:",
+                        targetText: "Those who have studied IELTS for less than 3 months (entry test score from 3.0+) or students who have completed Level Candy.",
+                        objective: "Objective:",
+                        objectiveText: "Students begin to be exposed to IELTS format, get familiar with question types in each skill.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Do shorter exercises, focus on analyzing exercises and upgrading vocabulary",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Practice speaking familiar life topics, focus on developing ideas according to IELTS format",
+                        writing: "✍️ Writing",
+                        writingText: "Get familiar with Writing theory: Task 1 charts and various Task 2 types",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 3.5 - Understand IELTS format and how to do exercises"
+                    },
+                    donuts: {
+                        target: "For:",
+                        targetText: "Those who have studied IELTS (entry test score from 4.0+) or students who have completed Level Cookies.",
+                        objective: "Objective:",
+                        objectiveText: "Students already have basic IELTS knowledge and question types (this level still reviews Writing theory).",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Start doing longer and more challenging passages, strengthen analysis skills",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Practice speaking familiar topics, strengthen pronunciation and reflexes, improve B1&B2 vocabulary",
+                        writing: "✍️ Writing",
+                        writingText: "Practice writing Task 1 charts and Task 2, strengthen analysis and outlining skills",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 4.5 - Master basic IELTS skills"
+                    },
+                    bagels: {
+                        target: "For:",
+                        targetText: "Those who have studied IELTS (entry test score from 4.5+) or students who have completed Level Donuts.",
+                        objective: "Objective:",
+                        objectiveText: "Students already have IELTS foundation and want to improve skills to achieve higher scores.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Get familiar with long reading and listening passages, difficulty increases gradually, strengthen academic vocabulary",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Practice with rich topics, develop logical ideas, improve pronunciation",
+                        writing: "✍️ Writing",
+                        writingText: "Write according to standard format, strengthen argumentation skills, use advanced vocabulary",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 5.0+ - Improve and refine IELTS skills"
+                    },
+                    burgers: {
+                        target: "For:",
+                        targetText: "Those who have studied IELTS (entry test score 5.0+) or students who have completed Level Donuts.",
+                        objective: "Objective:",
+                        objectiveText: "Students have mastered basic IELTS knowledge and skills in each skill.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Practice real exam questions, strengthen analysis skills and vocabulary upgrade, time pressure",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Practice speaking new, richer topics, strengthen pronunciation, reflexes and idea development",
+                        writing: "✍️ Writing",
+                        writingText: "Write proficiently in various types, strengthen analysis skills, apply complex structures",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 5.5+ - Achieve high scores and prepare for advanced levels"
+                    },
+                    pizzas: {
+                        target: "For:",
+                        targetText: "Those who have solid IELTS foundation (entry test score from 6.0+) or students who have completed Level Burgers.",
+                        objective: "Objective:",
+                        objectiveText: "Students are familiar with exam format and want to optimize strategies to achieve higher bands.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Practice advanced questions, get familiar with in-depth academic content, develop scan, skim skills",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Practice with academic and abstract topics, strengthen idea development ability",
+                        writing: "✍️ Writing",
+                        writingText: "Practice advanced writing types, optimize essay structure, use academic vocabulary",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 6.5+ - Achieve high scores in IELTS exam"
+                    },
+                    intensive: {
+                        target: "For:",
+                        targetText: "Those who have registered for IELTS exam this quarter and passed Mock Test from 4.5+ (suitable entry levels selected based on target scores).",
+                        expertCoaching: "👨‍🏫 Expert Coaching",
+                        expertCoachingText: "Students practice with real IELTS exam questions together with experienced teachers for many years",
+                        mockTests: "📊 Mock Tests",
+                        mockTestsText: "Organize mock tests, provide detailed score evaluation for 4 IELTS criteria",
+                        eLearning: "💻 E-learning",
+                        eLearningText: "Students use STUDIO's E-learning system to submit homework",
+                        examReady: "🎯 Exam Ready",
+                        examReadyText: "Prepare mentally before exam, practice according to real exam format"
+                    }
+                }
+            },
+            vi: {
+                title: "Khóa Học - The English Studio Da Nang",
+                heroTitle: "<span style='color: #D4A933;'>KHÓA HỌC</span> CỦA CHÚNG TÔI",
+                heroDescription: "Khám phá các chương trình học tiếng Anh toàn diện của chúng tôi giúp bạn từ người mới bắt đầu đến thành thạo IELTS",
+                courseLevels: "Cấp Độ Khóa Học",
+                courseMenu: "Menu Khóa Học",
+                ctaTitle: "🚀 SẴN SÀNG BẮT ĐẦU HÀNH TRÌNH IELTS?",
+                ctaSubtitle: "Nhận Đánh Giá Cấp Độ MIỄN PHÍ Ngay Hôm Nay:",
+                ctaFeatures: [
+                    "Khuyến Nghị Khóa Học Cá Nhân Hóa",
+                    "Đánh Giá Cấp Độ Bởi Chuyên Gia",
+                    "Kế Hoạch Học Tập Cá Nhân Hóa"
+                ],
+                ctaButton: "NHẬN ĐÁNH GIÁ MIỄN PHÍ",
+                ctaPlaceholder: "Nhập địa chỉ email của bạn",
+                contactTitle: "Liên hệ với chúng tôi",
+                followUs: "Theo dõi chúng tôi",
+                copyright: "© 2025 The English Studio Da Nang. Tất cả quyền được bảo lưu.",
+                courseNames: {
+                    candy: "Cấp Kẹo Ngọt",
+                    cookies: "Cấp Bánh Quy",
+                    donuts: "Cấp Bánh Rán",
+                    bagels: "Cấp Bánh Vòng",
+                    burgers: "Cấp Bánh Burger",
+                    pizzas: "Cấp Bánh Pizza",
+                    intensive: "Cấp Chinh Phục"
+                },
+                courseSubtitles: {
+                    candy: "Cấp Độ Sơ Cấp - Nền Tảng IELTS",
+                    cookies: "Cấp Độ Cơ Bản - Giới Thiệu IELTS",
+                    donuts: "Cấp Độ Trung Cấp - Tiến Bộ IELTS",
+                    bagels: "Cấp Độ Trung Cấp Cao - Thành Thạo IELTS",
+                    burgers: "Cấp Độ Nâng Cao - Xuất Sắc IELTS",
+                    pizzas: "Cấp Độ Chuyên Gia - Hoàn Hảo IELTS",
+                    intensive: "Cấp Độ Elite - Chinh Phục IELTS"
+                },
+                sidebarSubtitles: {
+                    candy: "Cơ bản (Band 0-2.5)",
+                    cookies: "Nền tảng (Band 2.5-3.5)",
+                    donuts: "Nâng cao (Band 3.5-4.5)",
+                    bagels: "Trung cấp (Band 4.5-5.0+)",
+                    burgers: "Nâng cao (Band 5.5+)",
+                    pizzas: "Chuyên gia (Band 6.5+)",
+                    intensive: "Chinh phục IELTS"
+                },
+                courseDescriptions: {
+                    candy: {
+                        target: "Dành cho:",
+                        targetText: "Không dành cho vỡ lòng, mất gốc, mất căn bản. Dành cho những bạn chưa làm quen với IELTS, chưa tiếp xúc nhiều với tiếng Anh.",
+                        objective: "Mục tiêu:",
+                        objectiveText: "Định hướng, giới thiệu về IELTS. Tập trung ôn lại một số chủ điểm ngữ pháp chính, bổ sung từ vựng cơ bản theo chủ đề, từ vựng về IELTS.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Làm quen các bài đơn giản, đoạn văn ngắn, tập phân tích, hiểu yêu cầu đề bài",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Làm quen với câu hỏi đơn giản, tập trung vào phát triển ý, phát âm và phản xạ",
+                        writing: "✍️ Writing",
+                        writingText: "Tập viết câu hoàn chỉnh, tập triển khai ý. Phân biệt được văn nói và văn viết trong IELTS",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 2.5 - Nền tảng vững chắc cho các level tiếp theo"
+                    },
+                    cookies: {
+                        target: "Dành cho:",
+                        targetText: "Những bạn đã từng học IELTS dưới 3 tháng (điểm test đầu vào từ 3.0+) hoặc học viên đã qua level Candy.",
+                        objective: "Mục tiêu:",
+                        objectiveText: "Các bạn bắt đầu tiếp xúc format IELTS, làm quen các dạng bài ở các kỹ năng.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Làm các dạng bài ngắn, tập trung vào phân tích bài và nâng cấp từ vựng",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Luyện nói chủ đề đời sống quen thuộc, tập trung vào phát triển ý theo format IELTS",
+                        writing: "✍️ Writing",
+                        writingText: "Làm quen với lý thuyết Viết: biểu đồ Task 1 và các dạng bài Task 2",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 3.5 - Hiểu rõ format và cách làm bài IELTS"
+                    },
+                    donuts: {
+                        target: "Dành cho:",
+                        targetText: "Những bạn đã từng học IELTS (điểm test đầu vào từ 4.0+) hoặc học viên đã qua level Cookies.",
+                        objective: "Yêu cầu:",
+                        objectiveText: "Các bạn đã có kiến thức cơ bản IELTS và các dạng bài (level này vẫn ôn lại lý thuyết Viết).",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Bắt đầu làm các bài dài và thử thách hơn, đẩy mạnh kỹ năng phân tích bài",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Luyện nói chủ đề quen thuộc, tăng cường phát âm và phản xạ, nâng cao từ vựng B1&B2",
+                        writing: "✍️ Writing",
+                        writingText: "Luyện viết các dạng biểu đồ Task 1 và Task 2, đẩy mạnh kỹ năng phân tích và lập dàn ý",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 4.5 - Thành thạo các kỹ năng IELTS cơ bản"
+                    },
+                    bagels: {
+                        target: "Dành cho:",
+                        targetText: "Những bạn đã từng học IELTS (điểm test đầu vào từ 4.5+) hoặc học viên đã qua level Donuts.",
+                        objective: "Yêu cầu:",
+                        objectiveText: "Các bạn đã có nền tảng về IELTS và muốn nâng cao kỹ năng để đạt điểm cao hơn.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Làm quen với các bài đọc và nghe dài, độ khó tăng dần, đẩy mạnh từ vựng học thuật",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Luyện tập với các chủ đề phong phú, phát triển ý logic, nâng cao phát âm",
+                        writing: "✍️ Writing",
+                        writingText: "Luyện viết theo format chuẩn, đẩy mạnh kỹ năng lập luận, sử dụng từ vựng nâng cao",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 5.0+ - Nâng cao và tinh chỉnh các kỹ năng IELTS"
+                    },
+                    burgers: {
+                        target: "Dành cho:",
+                        targetText: "Những bạn đã từng học IELTS (điểm test đầu vào 5.0+) hoặc học viên đã qua level Donuts.",
+                        objective: "Yêu cầu:",
+                        objectiveText: "Các bạn đã nắm chắc kiến thức IELTS và kỹ năng làm bài cơ bản ở các kỹ năng.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Luyện đề thi thật, đẩy mạnh kỹ năng phân tích bài và nâng từ vựng, áp lực thời gian",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Luyện nói chủ đề mới, phong phú hơn, đẩy mạnh phát âm, phản xạ và phát triển ý",
+                        writing: "✍️ Writing",
+                        writingText: "Viết thành thạo các dạng bài, đẩy mạnh kỹ năng phân tích, áp dụng cấu trúc phức tạp",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 5.5+ - Đạt điểm cao và chuẩn bị cho các level nâng cao"
+                    },
+                    pizzas: {
+                        target: "Dành cho:",
+                        targetText: "Những bạn đã có nền tảng vững chắc về IELTS (điểm test đầu vào từ 6.0+) hoặc học viên đã qua level Burgers.",
+                        objective: "Yêu cầu:",
+                        objectiveText: "Các bạn đã quen với format bài thi và muốn tối ưu hóa chiến lược làm bài để đạt band cao hơn.",
+                        reading: "📚 Reading & Listening",
+                        readingText: "Luyện đề nâng cao, làm quen với nội dung học thuật chuyên sâu, phát triển kỹ năng scan, skim",
+                        speaking: "🗣️ Speaking",
+                        speakingText: "Luyện tập với các chủ đề học thuật và trừu tượng, đẩy mạnh khả năng phát triển ý",
+                        writing: "✍️ Writing",
+                        writingText: "Luyện viết các dạng bài nâng cao, tối ưu hóa bố cục bài viết, sử dụng từ vựng học thuật",
+                        targetScore: "🎯 Target",
+                        targetScoreText: "Band 6.5+ - Đạt điểm cao trong kỳ thi IELTS"
+                    },
+                    intensive: {
+                        target: "Dành cho:",
+                        targetText: "Những bạn đã đăng ký thi IELTS trong quý và đã qua bài Mock Test từ 4.5+ trở lên (tuỳ theo đầu ra để chọn những đầu vào phù hợp).",
+                        expertCoaching: "👨‍🏫 Expert Coaching",
+                        expertCoachingText: "Học viên được luyện tập với đề thi thật IELTS cùng giáo viên kinh nghiệm nhiều năm",
+                        mockTests: "📊 Mock Tests",
+                        mockTestsText: "Tổ chức thi thử, đưa ra đánh giá chi tiết điểm số cho 4 tiêu chí của IELTS",
+                        eLearning: "💻 E-learning",
+                        eLearningText: "Học viên được sử dụng hệ thống E-learning của STUDIO để trả bài tập về nhà",
+                        examReady: "🎯 Exam Ready",
+                        examReadyText: "Chuẩn bị tâm lý trước khi thi, luyện tập theo thể thức thi thực tế"
+                    }
+                }
+            }
         };
 
         // Current language state
@@ -611,13 +918,215 @@
         }
 
         function updateLanguage() {
-            // No content to translate on courses page
+            // Update page title
+            document.title = translations[currentLanguage].title;
+
+            // Update hero section
+            const heroTitle = document.querySelector('h1.font-heading');
+            const heroDescription = document.querySelector('.pt-32.pb-20 p');
+
+            if (heroTitle) {
+                heroTitle.innerHTML = translations[currentLanguage].heroTitle;
+            }
+            if (heroDescription) {
+                heroDescription.textContent = translations[currentLanguage].heroDescription;
+            }
+
+            // Update course level names and subtitles
+            Object.keys(translations[currentLanguage].courseNames).forEach(level => {
+                const levelElement = document.querySelector(`#${level} h3`);
+                const subtitleElement = document.querySelector(`#${level} p`);
+
+                if (levelElement) {
+                    levelElement.textContent = translations[currentLanguage].courseNames[level];
+                }
+                if (subtitleElement && translations[currentLanguage].courseSubtitles[level]) {
+                    subtitleElement.textContent = translations[currentLanguage].courseSubtitles[level];
+                }
+            });
+
+            // Update course descriptions
+            Object.keys(translations[currentLanguage].courseDescriptions).forEach(level => {
+                const courseDesc = translations[currentLanguage].courseDescriptions[level];
+                const courseSection = document.querySelector(`#${level}`);
+
+                if (courseSection) {
+                    // Update target section
+                    const targetHeading = courseSection.querySelector('h3.font-semibold.text-lg');
+                    const targetText = courseSection.querySelector('p.text-gray-700');
+
+                    if (targetHeading && courseDesc.target) {
+                        targetHeading.textContent = courseDesc.target;
+                    }
+                    if (targetText && courseDesc.targetText) {
+                        targetText.textContent = courseDesc.targetText;
+                    }
+
+                    // Update objective section
+                    const objectiveHeadings = courseSection.querySelectorAll('h3.font-semibold.text-lg');
+                    const objectiveTexts = courseSection.querySelectorAll('p.text-gray-700');
+
+                    if (objectiveHeadings.length > 1 && courseDesc.objective) {
+                        objectiveHeadings[1].textContent = courseDesc.objective;
+                    }
+                    if (objectiveTexts.length > 1 && courseDesc.objectiveText) {
+                        objectiveTexts[1].textContent = courseDesc.objectiveText;
+                    }
+
+                    // Update skill sections
+                    const skillHeadings = courseSection.querySelectorAll('h4.font-semibold');
+                    const skillTexts = courseSection.querySelectorAll('p.text-sm.text-gray-600');
+
+                    if (skillHeadings.length >= 4 && skillTexts.length >= 4) {
+                        // Reading & Listening
+                        if (courseDesc.reading) skillHeadings[0].textContent = courseDesc.reading;
+                        if (courseDesc.readingText) skillTexts[0].textContent = courseDesc.readingText;
+
+                        // Speaking
+                        if (courseDesc.speaking) skillHeadings[1].textContent = courseDesc.speaking;
+                        if (courseDesc.speakingText) skillTexts[1].textContent = courseDesc.speakingText;
+
+                        // Writing
+                        if (courseDesc.writing) skillHeadings[2].textContent = courseDesc.writing;
+                        if (courseDesc.writingText) skillTexts[2].textContent = courseDesc.writingText;
+
+                        // Target Score
+                        if (courseDesc.targetScore) skillHeadings[3].textContent = courseDesc.targetScore;
+                        if (courseDesc.targetScoreText) skillTexts[3].textContent = courseDesc.targetScoreText;
+                    }
+
+                    // Special handling for intensive level
+                    if (level === 'intensive') {
+                        const intensiveHeadings = courseSection.querySelectorAll('h4.font-semibold');
+                        const intensiveTexts = courseSection.querySelectorAll('p.text-sm');
+
+                        if (intensiveHeadings.length >= 4 && intensiveTexts.length >= 4) {
+                            if (courseDesc.expertCoaching) intensiveHeadings[0].textContent = courseDesc.expertCoaching;
+                            if (courseDesc.expertCoachingText) intensiveTexts[0].textContent = courseDesc.expertCoachingText;
+
+                            if (courseDesc.mockTests) intensiveHeadings[1].textContent = courseDesc.mockTests;
+                            if (courseDesc.mockTestsText) intensiveTexts[1].textContent = courseDesc.mockTestsText;
+
+                            if (courseDesc.eLearning) intensiveHeadings[2].textContent = courseDesc.eLearning;
+                            if (courseDesc.eLearningText) intensiveTexts[2].textContent = courseDesc.eLearningText;
+
+                            if (courseDesc.examReady) intensiveHeadings[3].textContent = courseDesc.examReady;
+                            if (courseDesc.examReadyText) intensiveTexts[3].textContent = courseDesc.examReadyText;
+                        }
+                    }
+                }
+            });
+
+            // Update sidebar title
+            const sidebarTitle = document.querySelector('#sidebar h3');
+            if (sidebarTitle) {
+                sidebarTitle.textContent = translations[currentLanguage].courseLevels;
+            }
+
+            // Update mobile sidebar title
+            const mobileSidebarTitle = document.querySelector('#mobile-sidebar h3');
+            if (mobileSidebarTitle) {
+                mobileSidebarTitle.textContent = translations[currentLanguage].courseLevels;
+            }
+
+            // Update mobile menu button text
+            const mobileMenuBtn = document.querySelector('#mobile-menu-toggle span');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.textContent = translations[currentLanguage].courseMenu;
+            }
+
+            // Update CTA section
+            const ctaTitle = document.querySelector('#signup h2');
+            const ctaSubtitle = document.querySelector('#signup p');
+            const ctaButton = document.querySelector('#signup button[type="submit"]');
+            const ctaInput = document.querySelector('#signup input[type="email"]');
+
+            if (ctaTitle) {
+                ctaTitle.textContent = translations[currentLanguage].ctaTitle;
+            }
+            if (ctaSubtitle) {
+                ctaSubtitle.textContent = translations[currentLanguage].ctaSubtitle;
+            }
+            if (ctaButton) {
+                ctaButton.textContent = translations[currentLanguage].ctaButton;
+            }
+            if (ctaInput) {
+                ctaInput.placeholder = translations[currentLanguage].ctaPlaceholder;
+            }
+
+            // Update CTA features
+            const ctaFeatures = document.querySelectorAll('#signup .flex.items-center.space-x-2 span:last-child');
+            ctaFeatures.forEach((feature, index) => {
+                if (translations[currentLanguage].ctaFeatures[index]) {
+                    feature.textContent = translations[currentLanguage].ctaFeatures[index];
+                }
+            });
+
+            // Update sidebar navigation subtitles
+            const sidebarSubtitles = document.querySelectorAll('#sidebar .text-sm.text-gray-500');
+            const mobileSidebarSubtitles = document.querySelectorAll('#mobile-sidebar .text-sm.text-gray-500');
+
+            // Update desktop sidebar subtitles
+            if (sidebarSubtitles.length >= 7) {
+                sidebarSubtitles[0].textContent = translations[currentLanguage].sidebarSubtitles.candy;
+                sidebarSubtitles[1].textContent = translations[currentLanguage].sidebarSubtitles.cookies;
+                sidebarSubtitles[2].textContent = translations[currentLanguage].sidebarSubtitles.donuts;
+                sidebarSubtitles[3].textContent = translations[currentLanguage].sidebarSubtitles.bagels;
+                sidebarSubtitles[4].textContent = translations[currentLanguage].sidebarSubtitles.burgers;
+                sidebarSubtitles[5].textContent = translations[currentLanguage].sidebarSubtitles.pizzas;
+                sidebarSubtitles[6].textContent = translations[currentLanguage].sidebarSubtitles.intensive;
+            }
+
+            // Update mobile sidebar subtitles
+            if (mobileSidebarSubtitles.length >= 7) {
+                mobileSidebarSubtitles[0].textContent = translations[currentLanguage].sidebarSubtitles.candy;
+                mobileSidebarSubtitles[1].textContent = translations[currentLanguage].sidebarSubtitles.cookies;
+                mobileSidebarSubtitles[2].textContent = translations[currentLanguage].sidebarSubtitles.donuts;
+                mobileSidebarSubtitles[3].textContent = translations[currentLanguage].sidebarSubtitles.bagels;
+                mobileSidebarSubtitles[4].textContent = translations[currentLanguage].sidebarSubtitles.burgers;
+                mobileSidebarSubtitles[5].textContent = translations[currentLanguage].sidebarSubtitles.pizzas;
+                mobileSidebarSubtitles[6].textContent = translations[currentLanguage].sidebarSubtitles.intensive;
+            }
+
+            // Update sidebar navigation level names
+            const sidebarLevelNames = document.querySelectorAll('#sidebar .font-semibold.text-gray-900');
+            const mobileSidebarLevelNames = document.querySelectorAll('#mobile-sidebar .font-semibold.text-gray-900');
+
+            // Update desktop sidebar level names
+            if (sidebarLevelNames.length >= 7) {
+                sidebarLevelNames[0].textContent = translations[currentLanguage].courseNames.candy;
+                sidebarLevelNames[1].textContent = translations[currentLanguage].courseNames.cookies;
+                sidebarLevelNames[2].textContent = translations[currentLanguage].courseNames.donuts;
+                sidebarLevelNames[3].textContent = translations[currentLanguage].courseNames.bagels;
+                sidebarLevelNames[4].textContent = translations[currentLanguage].courseNames.burgers;
+                sidebarLevelNames[5].textContent = translations[currentLanguage].courseNames.pizzas;
+                sidebarLevelNames[6].textContent = translations[currentLanguage].courseNames.intensive;
+            }
+
+            // Update mobile sidebar level names
+            if (mobileSidebarLevelNames.length >= 7) {
+                mobileSidebarLevelNames[0].textContent = translations[currentLanguage].courseNames.candy;
+                mobileSidebarLevelNames[1].textContent = translations[currentLanguage].courseNames.cookies;
+                mobileSidebarLevelNames[2].textContent = translations[currentLanguage].courseNames.donuts;
+                mobileSidebarLevelNames[3].textContent = translations[currentLanguage].courseNames.bagels;
+                mobileSidebarLevelNames[4].textContent = translations[currentLanguage].courseNames.burgers;
+                mobileSidebarLevelNames[5].textContent = translations[currentLanguage].courseNames.pizzas;
+                mobileSidebarLevelNames[6].textContent = translations[currentLanguage].courseNames.intensive;
+            }
         }
 
         function updateToggleButton() {
-            const button = document.getElementById('current-lang');
-            if (button) {
-                button.textContent = currentLanguage.toUpperCase();
+            const flagIcon = document.getElementById('flag-icon');
+            const langText = document.getElementById('lang-text');
+
+            if (flagIcon && langText) {
+                if (currentLanguage === 'en') {
+                    flagIcon.textContent = '🇺🇸';
+                    langText.textContent = 'EN';
+                } else {
+                    flagIcon.textContent = '🇻🇳';
+                    langText.textContent = 'VN';
+                }
             }
         }
 
@@ -663,11 +1172,10 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 120; // Account for fixed navbar
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
+                    // Simple scroll to target - anchor handles positioning with CSS
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                     
                     // Update active menu item
@@ -678,73 +1186,190 @@
 
         // Function to update active menu item
         function updateActiveMenuItem(clickedItem) {
+            const href = clickedItem.getAttribute('href');
+            const anchorId = href ? href.substring(1) : ''; // e.g., 'cookies-anchor'
+            const baseId = anchorId.replace('-anchor', ''); // e.g., 'cookies'
+
+            // Remove active background from all course sections
+            document.querySelectorAll('[id]').forEach(section => {
+                section.classList.remove('ring-4', 'ring-green-300', 'ring-blue-300', 'ring-indigo-300', 'ring-purple-300', 'ring-pink-300', 'ring-red-300', 'ring-orange-300');
+            });
+
             // Remove active class from all desktop menu items
             document.querySelectorAll('nav a').forEach(item => {
-                item.classList.remove('bg-blue-100', 'border-l-4', 'border-blue-500');
+                item.classList.remove('bg-green-100', 'bg-blue-100', 'bg-indigo-100', 'bg-purple-100', 'bg-pink-100', 'bg-red-100', 'bg-orange-100');
+                item.classList.remove('border-l-4', 'border-green-500', 'border-blue-500', 'border-indigo-500', 'border-purple-500', 'border-pink-500', 'border-red-500', 'border-orange-500');
             });
-            
+
             // Remove active class from all mobile menu items
             document.querySelectorAll('.mobile-menu-item').forEach(item => {
-                item.classList.remove('bg-blue-100');
+                item.classList.remove('bg-green-100', 'bg-blue-100', 'bg-indigo-100', 'bg-purple-100', 'bg-pink-100', 'bg-red-100', 'bg-orange-100');
             });
-            
+
+            // Set specific colors for each level
+            let bgColor = 'bg-blue-100';
+            let borderColor = 'border-blue-500';
+            let ringColor = 'ring-blue-300';
+
+            switch(baseId) {
+                case 'candy':
+                    bgColor = 'bg-green-100';
+                    borderColor = 'border-green-500';
+                    ringColor = 'ring-green-300';
+                    break;
+                case 'cookies':
+                    bgColor = 'bg-blue-100';
+                    borderColor = 'border-blue-500';
+                    ringColor = 'ring-blue-300';
+                    break;
+                case 'donuts':
+                    bgColor = 'bg-indigo-100';
+                    borderColor = 'border-indigo-500';
+                    ringColor = 'ring-indigo-300';
+                    break;
+                case 'bagels':
+                    bgColor = 'bg-purple-100';
+                    borderColor = 'border-purple-500';
+                    ringColor = 'ring-purple-300';
+                    break;
+                case 'burgers':
+                    bgColor = 'bg-pink-100';
+                    borderColor = 'border-pink-500';
+                    ringColor = 'ring-pink-300';
+                    break;
+                case 'pizzas':
+                    bgColor = 'bg-red-100';
+                    borderColor = 'border-red-500';
+                    ringColor = 'ring-red-300';
+                    break;
+                case 'intensive':
+                    bgColor = 'bg-orange-100';
+                    borderColor = 'border-orange-500';
+                    ringColor = 'ring-orange-300';
+                    break;
+            }
+
+            // Add active background to current section
+            const activeSection = document.getElementById(baseId);
+            if (activeSection) {
+                activeSection.classList.add('ring-4', ringColor);
+            }
+
             // Add active class to clicked item (desktop)
             if (clickedItem.closest('nav')) {
-                clickedItem.classList.add('bg-blue-100', 'border-l-4', 'border-blue-500');
+                clickedItem.classList.add(bgColor, 'border-l-4', borderColor);
             }
-            
+
             // Find corresponding menu items in both desktop and mobile
-            const href = clickedItem.getAttribute('href');
             if (href) {
                 // Update desktop menu
                 const desktopItem = document.querySelector(`nav a[href="${href}"]`);
                 if (desktopItem) {
-                    desktopItem.classList.add('bg-blue-100', 'border-l-4', 'border-blue-500');
+                    desktopItem.classList.add(bgColor, 'border-l-4', borderColor);
                 }
-                
+
                 // Update mobile menu
                 const mobileItem = document.querySelector(`.mobile-menu-item[href="${href}"]`);
                 if (mobileItem) {
-                    mobileItem.classList.add('bg-blue-100');
+                    mobileItem.classList.add(bgColor);
                 }
             }
         }
 
         // Intersection Observer for automatic menu highlighting
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '-120px 0px -80% 0px'
+            threshold: 0.2,
+            rootMargin: '-208px 0px -60% 0px' // Match the scroll offset calculation
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
-                    const desktopMenuItem = document.querySelector(`nav a[href="#${id}"]`);
-                    const mobileMenuItem = document.querySelector(`.mobile-menu-item[href="#${id}"]`);
-                    
+
+                    // Remove active background from all course sections
+                    document.querySelectorAll('[id]').forEach(section => {
+                        section.classList.remove('ring-4', 'ring-green-300', 'ring-blue-300', 'ring-indigo-300', 'ring-purple-300', 'ring-pink-300', 'ring-red-300', 'ring-orange-300');
+                    });
+
                     // Remove active class from all menu items
                     document.querySelectorAll('nav a').forEach(item => {
-                        item.classList.remove('bg-blue-100', 'border-l-4', 'border-blue-500');
+                        item.classList.remove('bg-green-100', 'bg-blue-100', 'bg-indigo-100', 'bg-purple-100', 'bg-pink-100', 'bg-red-100', 'bg-orange-100');
+                        item.classList.remove('border-l-4', 'border-green-500', 'border-blue-500', 'border-indigo-500', 'border-purple-500', 'border-pink-500', 'border-red-500', 'border-orange-500');
                     });
                     document.querySelectorAll('.mobile-menu-item').forEach(item => {
-                        item.classList.remove('bg-blue-100');
+                        item.classList.remove('bg-green-100', 'bg-blue-100', 'bg-indigo-100', 'bg-purple-100', 'bg-pink-100', 'bg-red-100', 'bg-orange-100');
                     });
-                    
+
+                    // Add active class based on section ID
+                    const desktopMenuItem = document.querySelector(`nav a[href="#${id}"]`);
+                    const mobileMenuItem = document.querySelector(`.mobile-menu-item[href="#${id}"]`);
+                    const activeSection = document.getElementById(id);
+
+                    let bgColor = 'bg-blue-100';
+                    let borderColor = 'border-blue-500';
+                    let ringColor = 'ring-blue-300';
+
+                    // Set specific colors for each level
+                    switch(id) {
+                        case 'candy':
+                            bgColor = 'bg-green-100';
+                            borderColor = 'border-green-500';
+                            ringColor = 'ring-green-300';
+                            break;
+                        case 'cookies':
+                            bgColor = 'bg-blue-100';
+                            borderColor = 'border-blue-500';
+                            ringColor = 'ring-blue-300';
+                            break;
+                        case 'donuts':
+                            bgColor = 'bg-indigo-100';
+                            borderColor = 'border-indigo-500';
+                            ringColor = 'ring-indigo-300';
+                            break;
+                        case 'bagels':
+                            bgColor = 'bg-purple-100';
+                            borderColor = 'border-purple-500';
+                            ringColor = 'ring-purple-300';
+                            break;
+                        case 'burgers':
+                            bgColor = 'bg-pink-100';
+                            borderColor = 'border-pink-500';
+                            ringColor = 'ring-pink-300';
+                            break;
+                        case 'pizzas':
+                            bgColor = 'bg-red-100';
+                            borderColor = 'border-red-500';
+                            ringColor = 'ring-red-300';
+                            break;
+                        case 'intensive':
+                            bgColor = 'bg-orange-100';
+                            borderColor = 'border-orange-500';
+                            ringColor = 'ring-orange-300';
+                            break;
+                    }
+
+                    // Add active background to current section
+                    if (activeSection) {
+                        activeSection.classList.add('ring-4', ringColor);
+                    }
+
                     // Add active class to current section's menu items
                     if (desktopMenuItem) {
-                        desktopMenuItem.classList.add('bg-blue-100', 'border-l-4', 'border-blue-500');
+                        desktopMenuItem.classList.add(bgColor, 'border-l-4', borderColor);
                     }
                     if (mobileMenuItem) {
-                        mobileMenuItem.classList.add('bg-blue-100');
+                        mobileMenuItem.classList.add(bgColor);
                     }
                 }
             });
         }, observerOptions);
 
-        // Observe all course sections
-        document.querySelectorAll('[id]').forEach(section => {
-            if (section.id) {
+        // Observe course sections only
+        const courseSections = ['candy', 'cookies', 'donuts', 'bagels', 'burgers', 'pizzas', 'intensive'];
+        courseSections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) {
                 observer.observe(section);
             }
         });
@@ -765,8 +1390,9 @@
         }, cardObserverOptions);
 
         // Observe course cards for animation
-        document.querySelectorAll('[id]').forEach(card => {
-            if (card.id) {
+        courseSections.forEach(sectionId => {
+            const card = document.getElementById(sectionId);
+            if (card) {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(50px)';
                 card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -776,9 +1402,14 @@
 
         // Set first menu item as active on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const firstMenuItem = document.querySelector('nav a');
+            const firstMenuItem = document.querySelector('nav a[href="#candy-anchor"]');
+            const firstSection = document.getElementById('candy');
             if (firstMenuItem) {
                 updateActiveMenuItem(firstMenuItem);
+            }
+            // Add initial ring to first section
+            if (firstSection) {
+                firstSection.classList.add('ring-4', 'ring-green-300');
             }
         });
     </script>

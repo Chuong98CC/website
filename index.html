@@ -23,19 +23,23 @@
                 </div>
                 
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="font-semibold text-black hover:opacity-80 transition-colors">Home</a>
-                    <a href="courses.html" class="hover:opacity-80 transition-colors text-black">Courses</a>
-                    <a href="teachers.html" class="hover:opacity-80 transition-colors text-black">Teachers</a>
-                    <a href="#contact" class="hover:opacity-80 transition-colors text-black">Contact</a>
-                    <!-- Language Toggle Button -->
-                    <button id="language-toggle" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
-                        <span id="current-lang">EN</span>
-                    </button>
+                    <a href="index.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
+                    <a href="courses.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
+                    <a href="teachers.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
+                    <a href="#contact" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
                 </div>
                 
             </div>
         </div>
     </nav>
+
+    <!-- Language Toggle Button - Fixed Position -->
+    <button id="language-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
+        <span id="current-lang" class="flex items-center space-x-2">
+            <span id="flag-icon">🇺🇸</span>
+            <span id="lang-text">EN</span>
+        </span>
+    </button>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20" style="background-color: #1D4B3B;">
@@ -441,6 +445,7 @@
         // Language translations
         const translations = {
             en: {
+                title: "The English Studio Da Nang",
                 testimonials: [
                     {
                         text: "\"At 'Té' I didn't study IELTS, I studied mindset, I studied open-minded thinking through debates and being forced to speak. My English learning became easier and much less stressful.\"",
@@ -460,6 +465,7 @@
                 ]
             },
             vi: {
+                title: "The English Studio Da Nang",
                 testimonials: [
                     {
                         text: "\"Ở 'Té' em không học IELTS mà học mindset, học lối tư duy cởi mở thông qua các buổi debate và 'bị bắt' nói. Việc học tiếng Anh của em dễ dàng và đỡ áp lực hơn hẳn.\"",
@@ -491,6 +497,9 @@
         }
 
         function updateLanguage() {
+            // Update page title
+            document.title = translations[currentLanguage].title;
+
             // Update only the main testimonials section
             const testimonialCards = document.querySelectorAll('.testimonial-card');
 
@@ -517,9 +526,17 @@
         }
 
         function updateToggleButton() {
-            const button = document.getElementById('current-lang');
-            if (button) {
-                button.textContent = currentLanguage.toUpperCase();
+            const flagIcon = document.getElementById('flag-icon');
+            const langText = document.getElementById('lang-text');
+
+            if (flagIcon && langText) {
+                if (currentLanguage === 'en') {
+                    flagIcon.textContent = '🇺🇸';
+                    langText.textContent = 'EN';
+                } else {
+                    flagIcon.textContent = '🇻🇳';
+                    langText.textContent = 'VN';
+                }
             }
         }
 

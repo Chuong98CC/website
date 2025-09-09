@@ -137,8 +137,74 @@ function initLanguage() {
     updateCommonElements();
 }
 
+// Function to load navigation component
+function loadNavigation() {
+    const navigationContainer = document.getElementById('navigation-container');
+    if (navigationContainer) {
+        console.log('Loading navigation component...');
+        fetch('components/navigation.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                navigationContainer.innerHTML = data;
+                // Initialize language toggle for the loaded navigation
+                const languageToggle = document.getElementById('language-toggle');
+                if (languageToggle) {
+                    languageToggle.addEventListener('click', toggleLanguage);
+                }
+                console.log('Navigation component loaded successfully');
+            })
+            .catch(error => {
+                console.error('Error loading navigation component:', error);
+                console.log('Using fallback navigation...');
+                // Fallback: create basic navigation if component fails to load
+                navigationContainer.innerHTML = `
+                    <nav class="fixed w-full shadow-lg z-50 bg-white">
+                        <div class="max-w-7xl mx-auto px-6">
+                            <div class="flex justify-between items-center py-4">
+                                <div class="flex items-center space-x-3">
+                                    <img src="assess/logo.jpg" alt="The English Studio Logo" class="w-16 h-16 rounded-lg object-cover">
+                                    <div class="flex flex-col">
+                                        <span class="font-bold text-4xl leading-tight">
+                                            <span style="color: #D4A933;">T</span><span style="color: #1D4B3B;">he </span><span style="color: #D4A933;">E</span><span style="color: #1D4B3B;">nglish </span><span style="color: #D4A933;">S</span><span style="color: #1D4B3B;">tudio</span>
+                                        </span>
+                                        <span class="text-xs text-gray-600 font-medium leading-tight">Education Campus - IELTS Prep - Academy Consultancy</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="hidden md:flex space-x-8">
+                                    <a href="index.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
+                                    <a href="courses.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
+                                    <a href="teachers.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
+                                    <a href="#contact" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    
+                    <!-- Language Toggle Button - Fixed Position -->
+                    <button id="language-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
+                        <span id="current-lang" class="flex items-center space-x-2">
+                            <span id="flag-icon">🇺🇸</span>
+                            <span id="lang-text">EN</span>
+                        </span>
+                    </button>
+                `;
+            });
+    } else {
+        console.error('Navigation container not found');
+    }
+}
+
 // Initialize all common functionality
 function initCommon() {
+    // Load navigation component
+    loadNavigation();
+
     // Initialize language toggle
     const languageToggle = document.getElementById('language-toggle');
     if (languageToggle) {
@@ -172,3 +238,7 @@ window.Common = {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', initCommon);
+
+// Test if script is loading
+console.log('common.js loaded successfully');
+alert('common.js loaded - navigation should appear soon');

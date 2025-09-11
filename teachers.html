@@ -10,37 +10,10 @@
     </style>
 </head>
 <body class="font-primary text-text bg-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full shadow-lg z-50 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-3">
-                    <img src="assess/logo.jpg" alt="The English Studio Logo" class="w-16 h-16 rounded-lg object-cover">
-                    <div class="flex flex-col">
-                        <span class="font-bold text-4xl leading-tight">
-                            <span style="color: #D4A933;">T</span><span style="color: #1D4B3B;">he </span><span style="color: #D4A933;">E</span><span style="color: #1D4B3B;">nglish </span><span style="color: #D4A933;">S</span><span style="color: #1D4B3B;">tudio</span>
-                        </span>
-                        <span class="text-xs text-gray-600 font-medium leading-tight">Education Campus - IELTS Prep - Academy Consultancy</span>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
-                    <a href="courses.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
-                    <a href="teachers.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
-                    <a href="#contact" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Language Toggle Button - Fixed Position -->
-    <button id="language-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
-        <span id="current-lang" class="flex items-center space-x-2">
-            <span id="flag-icon">🇺🇸</span>
-            <span id="lang-text">EN</span>
-        </span>
-    </button>
+    <!-- Navigation Container -->
+    <div id="nav-container">
+        <!-- Navigation will be loaded here by common.js -->
+    </div>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20" style="background-color: #1D4B3B;">
@@ -175,10 +148,7 @@
                 passionateTeachingDesc: "Our team is genuinely passionate about helping students achieve their goals",
                 ctaTitle: "Ready to Meet Your Coach?",
                 ctaSubtitle: "Book a free consultation to meet our team and find the perfect learning path for you",
-                ctaButton: "BOOK FREE CONSULTATION",
-                contactTitle: "Get in touch",
-                followUs: "Follow us",
-                copyright: "© 2025 The English Studio Da Nang. All rights reserved."
+                ctaButton: "BOOK FREE CONSULTATION"
             },
             vi: {
                 title: "Giảng Viên - The English Studio Da Nang",
@@ -200,10 +170,7 @@
                 passionateTeachingDesc: "Đội ngũ của chúng tôi thực sự đam mê giúp đỡ học viên đạt được mục tiêu",
                 ctaTitle: "Sẵn Sàng Gặp Giáo Viên Của Bạn?",
                 ctaSubtitle: "Đặt lịch tư vấn miễn phí để gặp đội ngũ của chúng tôi và tìm con đường học tập hoàn hảo cho bạn",
-                ctaButton: "ĐẶT LỊCH TƯ VẤN MIỄN PHÍ",
-                contactTitle: "Liên hệ với chúng tôi",
-                followUs: "Theo dõi chúng tôi",
-                copyright: "© 2025 The English Studio Da Nang. Tất cả quyền được bảo lưu."
+                ctaButton: "ĐẶT LỊCH TƯ VẤN MIỄN PHÍ"
             }
         };
 
@@ -278,6 +245,15 @@
         // Language toggle functionality
         function toggleLanguage() {
             currentLanguage = currentLanguage === 'en' ? 'vi' : 'en';
+            
+            // Set global language state for components
+            window.currentLanguage = currentLanguage;
+            
+            // Dispatch global language change event
+            document.dispatchEvent(new CustomEvent('languageChanged', {
+                detail: { language: currentLanguage }
+            }));
+            
             updateLanguage();
             updateToggleButton();
         }
@@ -363,21 +339,6 @@
                 ctaButton.textContent = translations[currentLanguage].ctaButton;
             }
 
-            // Update footer
-            const contactTitle = document.querySelector('.footer-contact-title');
-            const followUsTitle = document.querySelector('.footer-follow-us');
-            const copyrightText = document.querySelector('.footer-copyright');
-
-            if (contactTitle) {
-                contactTitle.textContent = translations[currentLanguage].contactTitle;
-            }
-            if (followUsTitle) {
-                followUsTitle.textContent = translations[currentLanguage].followUs;
-            }
-            if (copyrightText) {
-                copyrightText.textContent = translations[currentLanguage].copyright;
-            }
-
             // Update dynamic teacher and staff cards language
             if (typeof updateCardLanguage === 'function') {
                 updateCardLanguage(currentLanguage);
@@ -401,6 +362,9 @@
 
         // Initialize language toggle
         document.addEventListener('DOMContentLoaded', function() {
+            // Set global language state for components
+            window.currentLanguage = currentLanguage;
+            
             // Initialize dynamic teacher and staff cards
             if (typeof renderTeacherCards === 'function') {
                 renderTeacherCards(currentLanguage);
@@ -408,11 +372,21 @@
             if (typeof renderStaffCards === 'function') {
                 renderStaffCards(currentLanguage);
             }
+        });
 
+        // Event listener for navigation loaded
+        document.addEventListener('navigationLoaded', function() {
+            console.log('Navigation loaded, setting up language toggle...');
             const languageToggle = document.getElementById('language-toggle');
             if (languageToggle) {
                 languageToggle.addEventListener('click', toggleLanguage);
             }
+        });
+
+        // Event listener for footer loaded
+        document.addEventListener('footerLoaded', function() {
+            console.log('Footer loaded...');
+            // Footer will handle its own language updates via global events
         });
 
         // Smooth scrolling for anchor links

@@ -1,5 +1,160 @@
 // Common JavaScript functionality for The English Studio website
 
+// Navigation translations
+const navigationTranslations = {
+    en: {
+        navTagline: "Education Campus - IELTS Prep - Academy Consultancy",
+        navHome: "Home",
+        navCourses: "Courses",
+        navTeachers: "Teachers",
+        navContact: "Contact"
+    },
+    vi: {
+        navTagline: "Trung Tâm Giáo Dục - Luyện Thi IELTS - Tư Vấn Học Thuật",
+        navHome: "Trang Chủ",
+        navCourses: "Khóa Học",
+        navTeachers: "Giảng Viên",
+        navContact: "Liên Hệ"
+    }
+};
+
+// Footer translations
+const footerTranslations = {
+    en: {
+        contactTitle: "Get in touch",
+        followUs: "Follow us",
+        copyright: "© 2025 The English Studio Da Nang. All rights reserved."
+    },
+    vi: {
+        contactTitle: "Liên hệ với chúng tôi",
+        followUs: "Theo dõi chúng tôi",
+        copyright: "© 2025 The English Studio Da Nang. Tất cả quyền được bảo lưu."
+    }
+};
+
+// Current navigation language state (defaults to English)
+let navigationLanguage = 'en';
+
+// Function to update navigation language
+function updateNavigationLanguage(language) {
+    navigationLanguage = language;
+    
+    // Update navigation elements
+    const navTagline = document.querySelector('.nav-tagline');
+    const navHome = document.querySelector('.nav-home');
+    const navCourses = document.querySelector('.nav-courses');
+    const navTeachers = document.querySelector('.nav-teachers');
+    const navContact = document.querySelector('.nav-contact');
+
+    if (navTagline) {
+        navTagline.textContent = navigationTranslations[language].navTagline;
+    }
+    if (navHome) {
+        navHome.textContent = navigationTranslations[language].navHome;
+    }
+    if (navCourses) {
+        navCourses.textContent = navigationTranslations[language].navCourses;
+    }
+    if (navTeachers) {
+        navTeachers.textContent = navigationTranslations[language].navTeachers;
+    }
+    if (navContact) {
+        navContact.textContent = navigationTranslations[language].navContact;
+    }
+
+    console.log(`Navigation language updated to: ${language}`);
+}
+
+// Function to update footer language
+function updateFooterLanguage(language) {
+    // Update footer elements
+    const contactTitle = document.querySelector('.footer-contact-title');
+    const followUsTitle = document.querySelector('.footer-follow-us');
+    const copyrightText = document.querySelector('.footer-copyright');
+
+    if (contactTitle) {
+        contactTitle.textContent = footerTranslations[language].contactTitle;
+    }
+    if (followUsTitle) {
+        followUsTitle.textContent = footerTranslations[language].followUs;
+    }
+    if (copyrightText) {
+        copyrightText.textContent = footerTranslations[language].copyright;
+    }
+
+    console.log(`Footer language updated to: ${language}`);
+}
+
+// Function to load navigation component
+function loadNavigation() {
+    const navContainer = document.getElementById('nav-container');
+    if (!navContainer) {
+        console.log('Navigation container not found');
+        return;
+    }
+
+    console.log('Loading navigation component...');
+    fetch('components/navigation.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            navContainer.innerHTML = html;
+            console.log('Navigation component loaded successfully');
+            
+            // Check if there's a global language state
+            if (window.currentLanguage) {
+                navigationLanguage = window.currentLanguage;
+            }
+            
+            // Update navigation with current language
+            updateNavigationLanguage(navigationLanguage);
+            
+            // Dispatch custom event to notify that navigation is loaded
+            document.dispatchEvent(new CustomEvent('navigationLoaded'));
+        })
+        .catch(error => {
+            console.error('Error loading navigation component:', error);
+            console.log('Creating fallback navigation...');
+            
+            // Create a simple fallback navigation if loading fails
+            navContainer.innerHTML = `
+                <nav class="fixed w-full shadow-lg z-50 bg-white">
+                    <div class="max-w-7xl mx-auto px-6">
+                        <div class="flex justify-between items-center py-4">
+                            <div class="flex items-center space-x-3">
+                                <img src="assess/logo.jpg" alt="The English Studio Logo" class="w-16 h-16 rounded-lg object-cover">
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-4xl leading-tight">
+                                        <span style="color: #D4A933;">T</span><span style="color: #1D4B3B;">he </span><span style="color: #D4A933;">E</span><span style="color: #1D4B3B;">nglish </span><span style="color: #D4A933;">S</span><span style="color: #1D4B3B;">tudio</span>
+                                    </span>
+                                    <span class="nav-tagline text-xs text-gray-600 font-medium leading-tight">Education Campus - IELTS Prep - Academy Consultancy</span>
+                                </div>
+                            </div>
+                            
+                            <div class="hidden md:flex space-x-8">
+                                <a href="index.html" class="nav-home font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
+                                <a href="courses.html" class="nav-courses font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
+                                <a href="teachers.html" class="nav-teachers font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
+                                <a href="#contact" class="nav-contact font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <button id="language-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
+                    <span id="current-lang" class="flex items-center space-x-2">
+                        <span id="flag-icon">🇺🇸</span>
+                        <span id="lang-text">EN</span>
+                    </span>
+                </button>
+            `;
+            console.log('Fallback navigation created');
+        });
+}
+
 // Function to load footer component
 function loadFooter() {
     const footerContainer = document.getElementById('footer-container');
@@ -19,6 +174,14 @@ function loadFooter() {
         .then(html => {
             footerContainer.innerHTML = html;
             console.log('Footer component loaded successfully');
+            
+            // Check if there's a global language state
+            if (window.currentLanguage) {
+                navigationLanguage = window.currentLanguage;
+            }
+            
+            // Update footer with current language
+            updateFooterLanguage(navigationLanguage);
             
             // Dispatch custom event to notify that footer is loaded
             document.dispatchEvent(new CustomEvent('footerLoaded'));
@@ -84,13 +247,28 @@ function loadFooter() {
 
 // Initialize common functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Common.js loaded - initializing footer...');
+    console.log('Common.js loaded - initializing components...');
+    loadNavigation();
     loadFooter();
+});
+
+// Listen for global language change events
+document.addEventListener('languageChanged', function(event) {
+    const newLanguage = event.detail.language;
+    console.log(`Common.js received language change event: ${newLanguage}`);
+    updateNavigationLanguage(newLanguage);
+    updateFooterLanguage(newLanguage);
 });
 
 // Export functions for use in other scripts
 window.Common = {
-    loadFooter
+    loadNavigation,
+    loadFooter,
+    updateNavigationLanguage,
+    updateFooterLanguage,
+    getNavigationTranslations: () => navigationTranslations,
+    getFooterTranslations: () => footerTranslations,
+    getCurrentNavigationLanguage: () => navigationLanguage
 };
 
 console.log('common.js loaded successfully');

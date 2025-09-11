@@ -13,29 +13,10 @@
         <!-- Navigation will be loaded here by common.js -->
     </div>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20" style="background-color: #1D4B3B;">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-6xl font-bold mb-6 text-white">
-                MASTER ENGLISH WITH<br>
-                <span style="color: #D4A933;">CONFIDENCE</span> AND <span style="color: #D4A933;">SUCCESS</span>!
-            </h1>
-            <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
-                Join thousands of learners who trust us to ignite passion for English mastery. Our proven methodology combines fun, personalized coaching, and real-world skills to help you conquer IELTS and unlock your future potential!
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#about" class="bg-gradient-to-r from-white to-gray-50 text-gray-800 px-8 py-4 rounded-full text-lg font-bold hover:from-gray-50 hover:to-white hover:text-gray-900 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 border-2 border-gray-200 hover:border-gray-300 shadow-lg">
-                    <span class="relative z-10">EXPLORE NOW</span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 hover:opacity-20 transition-opacity duration-300 rounded-full"></div>
-                </a>
-                <a href="#signup" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-8 py-4 rounded-full text-lg font-bold hover:from-yellow-500 hover:to-yellow-600 transform hover:scale-105 hover:shadow-2xl transition-all duration-300 border-2 border-yellow-300 hover:border-yellow-400 shadow-lg relative overflow-hidden">
-                    <span class="relative z-10">FREE ASSESSMENT</span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 hover:opacity-30 transition-opacity duration-300 rounded-full"></div>
-                    <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- Hero Container -->
+    <div id="hero-container">
+        <!-- Hero section will be loaded here by hero.js -->
+    </div>
 
     <!-- About Container -->
     <div id="about-container">
@@ -47,40 +28,10 @@
         <!-- Testimonials will be loaded here by testimonial.js -->
     </div>
 
-    <!-- CTA Section -->
-    <section id="signup" class="py-20" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%);">
-        <div class="max-w-4xl mx-auto px-6 text-center text-white">
-            <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">
-                🚀 READY TO TRANSFORM YOUR FUTURE?
-            </h2>
-            <p class="text-xl mb-8">Join the Success Journey! Get Your FREE 1-1 Assessment Today:</p>
-            <div class="flex flex-wrap justify-center gap-8 mb-12">
-                <div class="flex items-center space-x-2">
-                    <svg class="w-6 h-6" fill="none" stroke="#D4A933" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span class="text-lg">Personalized Learning Plan</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <svg class="w-6 h-6" fill="none" stroke="#D4A933" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span class="text-lg">Expert Assessment & Guidance</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <svg class="w-6 h-6" fill="none" stroke="#D4A933" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span class="text-lg">Path to IELTS Success</span>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                <button type="submit" class="px-8 py-4 rounded-full text-lg font-bold bg-yellow-400 text-gray-900 hover:bg-yellow-300 transform hover:scale-105 transition-all shadow-lg" style="background-color: #D4A933;">
-                    BOOK A FREE ASSESSMENT
-                </button>
-            </div>
-        </div>
-    </section>
+    <!-- CTA Container -->
+    <div id="cta-container">
+        <!-- CTA section will be loaded here by cta.js -->
+    </div>
 
     <!-- Advantages Section Container -->
     <div id="advantages-container"></div>
@@ -203,9 +154,11 @@
     <script src="js/card-renderer.js"></script>  <!-- Base CardRenderer class -->
     <!-- Load common JavaScript functionality -->
     <script src="js/common.js"></script>
-    <!-- Load about functionality -->
+    <!-- Load index page components -->
+    <script src="js/index/hero.js"></script>
     <script src="js/index/about.js"></script>
     <script src="js/index/testimonial.js"></script>
     <script src="js/index/advantages.js"></script>
+    <script src="js/index/cta.js"></script>
 </body>
 </html>

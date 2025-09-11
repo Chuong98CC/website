@@ -244,18 +244,9 @@
 
         // Language toggle functionality
         function toggleLanguage() {
-            currentLanguage = currentLanguage === 'en' ? 'vi' : 'en';
-            
-            // Set global language state for components
-            window.currentLanguage = currentLanguage;
-            
-            // Dispatch global language change event
-            document.dispatchEvent(new CustomEvent('languageChanged', {
-                detail: { language: currentLanguage }
-            }));
-            
-            updateLanguage();
-            updateToggleButton();
+            // This function is now deprecated - language toggle is handled by common.js
+            // Keeping for backward compatibility but functionality moved to common.js
+            console.log('toggleLanguage called - now handled by common.js');
         }
 
         function updateLanguage() {
@@ -345,26 +336,8 @@
             }
         }
 
-        function updateToggleButton() {
-            const flagIcon = document.getElementById('flag-icon');
-            const langText = document.getElementById('lang-text');
-
-            if (flagIcon && langText) {
-                if (currentLanguage === 'en') {
-                    flagIcon.textContent = '🇺🇸';
-                    langText.textContent = 'EN';
-                } else {
-                    flagIcon.textContent = '🇻🇳';
-                    langText.textContent = 'VN';
-                }
-            }
-        }
-
         // Initialize language toggle
         document.addEventListener('DOMContentLoaded', function() {
-            // Set global language state for components
-            window.currentLanguage = currentLanguage;
-            
             // Initialize dynamic teacher and staff cards
             if (typeof renderTeacherCards === 'function') {
                 renderTeacherCards(currentLanguage);
@@ -374,13 +347,17 @@
             }
         });
 
+        // Listen for global language changes from common.js
+        document.addEventListener('languageChanged', function(event) {
+            const newLanguage = event.detail.language;
+            console.log(`Teachers.html received language change: ${newLanguage}`);
+            currentLanguage = newLanguage;
+            updateLanguage();
+        });
+
         // Event listener for navigation loaded
         document.addEventListener('navigationLoaded', function() {
-            console.log('Navigation loaded, setting up language toggle...');
-            const languageToggle = document.getElementById('language-toggle');
-            if (languageToggle) {
-                languageToggle.addEventListener('click', toggleLanguage);
-            }
+            console.log('Navigation loaded - language toggle handled by common.js');
         });
 
         // Event listener for footer loaded

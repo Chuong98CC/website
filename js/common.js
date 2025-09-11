@@ -32,6 +32,9 @@ const footerTranslations = {
     }
 };
 
+// Global language state (defaults to English)
+let globalLanguage = 'en';
+
 // Current navigation language state (defaults to English)
 let navigationLanguage = 'en';
 
@@ -85,6 +88,56 @@ function updateFooterLanguage(language) {
     console.log(`Footer language updated to: ${language}`);
 }
 
+// Function to toggle global language
+function toggleGlobalLanguage() {
+    globalLanguage = globalLanguage === 'en' ? 'vi' : 'en';
+    
+    // Set global language state for components
+    window.currentLanguage = globalLanguage;
+    
+    // Dispatch global language change event
+    document.dispatchEvent(new CustomEvent('languageChanged', {
+        detail: { language: globalLanguage }
+    }));
+    
+    // Update toggle button display
+    updateToggleButton();
+    
+    console.log(`Global language toggled to: ${globalLanguage}`);
+}
+
+// Function to update toggle button display
+function updateToggleButton() {
+    const flagIcon = document.getElementById('flag-icon');
+    const langText = document.getElementById('lang-text');
+
+    if (flagIcon && langText) {
+        if (globalLanguage === 'en') {
+            flagIcon.textContent = '🇺🇸';
+            langText.textContent = 'EN';
+        } else {
+            flagIcon.textContent = '🇻🇳';
+            langText.textContent = 'VN';
+        }
+    }
+}
+
+// Function to initialize language toggle button
+function initializeLanguageToggle() {
+    const languageToggle = document.getElementById('language-toggle');
+    if (languageToggle) {
+        // Remove any existing event listeners
+        languageToggle.replaceWith(languageToggle.cloneNode(true));
+        
+        // Get the new reference and add event listener
+        const newToggle = document.getElementById('language-toggle');
+        if (newToggle) {
+            newToggle.addEventListener('click', toggleGlobalLanguage);
+            console.log('Language toggle button initialized');
+        }
+    }
+}
+
 // Function to load navigation component
 function loadNavigation() {
     const navContainer = document.getElementById('nav-container');
@@ -108,10 +161,17 @@ function loadNavigation() {
             // Check if there's a global language state
             if (window.currentLanguage) {
                 navigationLanguage = window.currentLanguage;
+                globalLanguage = window.currentLanguage;
             }
             
             // Update navigation with current language
             updateNavigationLanguage(navigationLanguage);
+            
+            // Initialize language toggle button
+            initializeLanguageToggle();
+            
+            // Update toggle button display
+            updateToggleButton();
             
             // Dispatch custom event to notify that navigation is loaded
             document.dispatchEvent(new CustomEvent('navigationLoaded'));
@@ -135,22 +195,30 @@ function loadNavigation() {
                                 </div>
                             </div>
                             
-                            <div class="hidden md:flex space-x-8">
-                                <a href="index.html" class="nav-home font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
-                                <a href="courses.html" class="nav-courses font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
-                                <a href="teachers.html" class="nav-teachers font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
-                                <a href="#contact" class="nav-contact font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
+                            <div class="flex items-center space-x-12">
+                                <div class="hidden md:flex space-x-8">
+                                    <a href="index.html" class="nav-home font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
+                                    <a href="courses.html" class="nav-courses font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
+                                    <a href="teachers.html" class="nav-teachers font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
+                                    <a href="#contact" class="nav-contact font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
+                                </div>
+                                
+                                <button id="language-toggle" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
+                                    <span id="current-lang" class="flex items-center space-x-2">
+                                        <span id="flag-icon">🇺🇸</span>
+                                        <span id="lang-text">EN</span>
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </nav>
-                <button id="language-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
-                    <span id="current-lang" class="flex items-center space-x-2">
-                        <span id="flag-icon">🇺🇸</span>
-                        <span id="lang-text">EN</span>
-                    </span>
-                </button>
             `;
+            
+            // Initialize language toggle button for fallback
+            initializeLanguageToggle();
+            updateToggleButton();
+            
             console.log('Fallback navigation created');
         });
 }
@@ -248,6 +316,10 @@ function loadFooter() {
 // Initialize common functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Common.js loaded - initializing components...');
+    
+    // Initialize global language state
+    window.currentLanguage = globalLanguage;
+    
     loadNavigation();
     loadFooter();
 });
@@ -256,8 +328,15 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('languageChanged', function(event) {
     const newLanguage = event.detail.language;
     console.log(`Common.js received language change event: ${newLanguage}`);
+    
+    // Update global language state
+    globalLanguage = newLanguage;
+    navigationLanguage = newLanguage;
+    
+    // Update all components
     updateNavigationLanguage(newLanguage);
     updateFooterLanguage(newLanguage);
+    updateToggleButton();
 });
 
 // Export functions for use in other scripts
@@ -266,9 +345,13 @@ window.Common = {
     loadFooter,
     updateNavigationLanguage,
     updateFooterLanguage,
+    toggleGlobalLanguage,
+    updateToggleButton,
+    initializeLanguageToggle,
     getNavigationTranslations: () => navigationTranslations,
     getFooterTranslations: () => footerTranslations,
-    getCurrentNavigationLanguage: () => navigationLanguage
+    getCurrentNavigationLanguage: () => navigationLanguage,
+    getCurrentGlobalLanguage: () => globalLanguage
 };
 
 console.log('common.js loaded successfully');

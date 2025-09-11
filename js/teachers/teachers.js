@@ -131,7 +131,7 @@ const teacherData = [
 // Global function to render teacher cards
 function renderTeacherCards(currentLanguage = 'en') {
     if (!window.cardRenderer.templates['teacher-card']) {
-        window.cardRenderer.loadTemplate('teacher-card', 'components/teacher-card.html')
+        window.cardRenderer.loadTemplate('teacher-card', 'components/teachers/teacher-card.html')
             .then(() => {
                 window.cardRenderer.renderCards('.teachers-grid', 'teacher-card', teacherData, currentLanguage);
             });

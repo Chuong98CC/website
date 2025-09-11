@@ -93,7 +93,7 @@ function loadTestimonials() {
     }
 
     console.log('Loading testimonials component...');
-    fetch('components/testimonials.html')
+    fetch('components/index/testimonials.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

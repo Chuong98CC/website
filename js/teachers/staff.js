@@ -80,7 +80,7 @@ const staffData = [
 // Global function to render staff cards
 function renderStaffCards(currentLanguage = 'en') {
     if (!window.cardRenderer.templates['teacher-card']) {
-        window.cardRenderer.loadTemplate('teacher-card', 'components/teacher-card.html')
+        window.cardRenderer.loadTemplate('teacher-card', 'components/teachers/teacher-card.html')
             .then(() => {
                 window.cardRenderer.renderCards('.staff-grid', 'teacher-card', staffData, currentLanguage);
             });

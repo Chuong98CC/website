@@ -91,7 +91,7 @@ function loadAbout() {
     }
 
     console.log('Loading about component...');
-    fetch('components/about.html')
+    fetch('components/index/about.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

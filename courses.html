@@ -16,37 +16,8 @@
     </style>
 </head>
 <body class="font-primary text-text bg-white">
-    <!-- Navigation -->
-    <nav class="fixed w-full shadow-lg z-50 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-3">
-                    <img src="assess/logo.jpg" alt="The English Studio Logo" class="w-16 h-16 rounded-lg object-cover">
-                    <div class="flex flex-col">
-                        <span class="font-bold text-4xl leading-tight">
-                            <span style="color: #D4A933;">T</span><span style="color: #1D4B3B;">he </span><span style="color: #D4A933;">E</span><span style="color: #1D4B3B;">nglish </span><span style="color: #D4A933;">S</span><span style="color: #1D4B3B;">tudio</span>
-                        </span>
-                        <span class="text-xs text-gray-600 font-medium leading-tight">Education Campus - IELTS Prep - Academy Consultancy</span>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
-                    <a href="courses.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
-                    <a href="teachers.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
-                    <a href="#contact" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Language Toggle Button - Fixed Position -->
-    <button id="language-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
-        <span id="current-lang" class="flex items-center space-x-2">
-            <span id="flag-icon">🇺🇸</span>
-            <span id="lang-text">EN</span>
-        </span>
-    </button>
+    <!-- Navigation Component -->
+    <div id="navigation-container"></div>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20" style="background-color: #1D4B3B;">
@@ -1128,13 +1099,13 @@
             }
         }
 
-        // Initialize language toggle
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize language toggle after navigation is loaded
+        function initializeLanguageToggle() {
             const languageToggle = document.getElementById('language-toggle');
             if (languageToggle) {
                 languageToggle.addEventListener('click', toggleLanguage);
             }
-        });
+        }
 
         // Mobile menu toggle functionality
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1398,17 +1369,110 @@
             }
         });
 
+        // Load navigation component
+        async function loadNavigation() {
+            // For local development, use fallback navigation for reliability
+            // In production, this can be switched to fetch the component file
+            console.log('Loading navigation using fallback method...');
+            createFallbackNavigation();
+            initializeLanguageToggle();
+            
+            /* 
+            // Production version with component fetching:
+            try {
+                console.log('Attempting to load navigation from component file...');
+                const response = await fetch('./components/navigation.html');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const navigationHTML = await response.text();
+                document.getElementById('navigation-container').innerHTML = navigationHTML;
+                console.log('Navigation loaded successfully from component file');
+                initializeLanguageToggle();
+            } catch (error) {
+                console.error('Error loading navigation:', error);
+                console.log('Using fallback navigation instead');
+                createFallbackNavigation();
+                initializeLanguageToggle();
+            }
+            */
+        }
+
+        // Fallback navigation creation
+        function createFallbackNavigation() {
+            console.log('Creating fallback navigation...');
+            const navigationContainer = document.getElementById('navigation-container');
+            if (!navigationContainer) {
+                console.error('Navigation container not found!');
+                return;
+            }
+            
+            const navigationHTML = `
+                <!-- Navigation Component -->
+                <nav class="fixed w-full shadow-lg z-50 bg-white">
+                    <div class="max-w-7xl mx-auto px-6">
+                        <div class="flex justify-between items-center py-4">
+                            <div class="flex items-center space-x-3">
+                                <img src="assess/logo.jpg" alt="The English Studio Logo" class="w-16 h-16 rounded-lg object-cover">
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-4xl leading-tight">
+                                        <span style="color: #D4A933;">T</span><span style="color: #1D4B3B;">he </span><span style="color: #D4A933;">E</span><span style="color: #1D4B3B;">nglish </span><span style="color: #D4A933;">S</span><span style="color: #1D4B3B;">tudio</span>
+                                    </span>
+                                    <span class="text-xs text-gray-600 font-medium leading-tight">Education Campus - IELTS Prep - Academy Consultancy</span>
+                                </div>
+                            </div>
+                            
+                            <div class="hidden md:flex space-x-8">
+                                <a href="index.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Home</a>
+                                <a href="courses.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Courses</a>
+                                <a href="teachers.html" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Teachers</a>
+                                <a href="#contact" class="font-bold text-xl text-black hover:opacity-80 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Language Toggle Button - Fixed Position -->
+                <button id="language-toggle" class="fixed top-4 right-4 z-50 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" style="background: linear-gradient(135deg, #1D4B3B 0%, #2D5A47 100%); color: #D4A933; border: 2px solid #D4A933;">
+                    <span id="current-lang" class="flex items-center space-x-2">
+                        <span id="flag-icon">🇺🇸</span>
+                        <span id="lang-text">EN</span>
+                    </span>
+                </button>
+            `;
+            navigationContainer.innerHTML = navigationHTML;
+            console.log('Fallback navigation created successfully');
+        }
+
         // Set first menu item as active on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const firstMenuItem = document.querySelector('nav a[href="#candy-anchor"]');
-            const firstSection = document.getElementById('candy');
-            if (firstMenuItem) {
-                updateActiveMenuItem(firstMenuItem);
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('DOM Content Loaded - Starting navigation setup...');
+            console.log('Navigation container exists:', !!document.getElementById('navigation-container'));
+            
+            // Load navigation first
+            try {
+                await loadNavigation();
+                console.log('Navigation loading completed');
+            } catch (error) {
+                console.error('Failed to load navigation:', error);
             }
-            // Add initial ring to first section
-            if (firstSection) {
-                firstSection.classList.add('ring-4', 'ring-green-300');
-            }
+            
+            // Wait a bit for navigation to be fully loaded before setting active state
+            setTimeout(() => {
+                console.log('Setting up menu active states...');
+                const firstMenuItem = document.querySelector('nav a[href="#candy-anchor"]');
+                const firstSection = document.getElementById('candy');
+                console.log('First menu item found:', !!firstMenuItem);
+                console.log('First section found:', !!firstSection);
+                
+                if (firstMenuItem) {
+                    updateActiveMenuItem(firstMenuItem);
+                }
+                // Add initial ring to first section
+                if (firstSection) {
+                    firstSection.classList.add('ring-4', 'ring-green-300');
+                }
+            }, 100);
         });
     </script>
 

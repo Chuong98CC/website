@@ -95,6 +95,9 @@ function toggleGlobalLanguage() {
     // Set global language state for components
     window.currentLanguage = globalLanguage;
     
+    // Store language preference
+    localStorage.setItem('language', globalLanguage);
+    
     // Dispatch global language change event
     document.dispatchEvent(new CustomEvent('languageChanged', {
         detail: { language: globalLanguage }
@@ -317,11 +320,26 @@ function loadFooter() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Common.js loaded - initializing components...');
     
+    // Initialize language from localStorage or default to English
+    // Uncomment the next line to force reset to English for testing:
+    // localStorage.removeItem('language');
+    const savedLanguage = localStorage.getItem('language') || 'en';
+    globalLanguage = savedLanguage;
+    console.log('Common.js: Initial language set to:', globalLanguage);
+    
     // Initialize global language state
     window.currentLanguage = globalLanguage;
     
     loadNavigation();
     loadFooter();
+    
+    // Dispatch initial language event after a short delay to ensure components are loaded
+    setTimeout(() => {
+        document.dispatchEvent(new CustomEvent('languageChanged', {
+            detail: { language: globalLanguage }
+        }));
+        console.log(`Initial language event dispatched: ${globalLanguage}`);
+    }, 100);
 });
 
 // Listen for global language change events

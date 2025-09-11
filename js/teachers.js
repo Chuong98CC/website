@@ -28,7 +28,7 @@ const teacherData = [
         "Tram Vu",
         "Head IELTS Coach",
         "Giảng Viên IELTS Chính",
-        "Founder of TES with 8+ years of IELTS teaching experience. IELTS 8.5 overall score. Specialized in Writing and Speaking modules with innovative teaching methods.",
+        "Founder of TES with 10+ years of IELTS teaching experience. IELTS 8.5 overall score. Specialized in Writing and Speaking modules with innovative teaching methods.",
         "Người sáng lập TES với hơn 8 năm kinh nghiệm giảng dạy IELTS. Điểm IELTS tổng thể 8.5. Chuyên về các phần thi Viết và Nói với phương pháp giảng dạy đổi mới.",
         "https://images.unsplash.com/photo-1494790108755-2616c668e23d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
         "IELTS Coach",
@@ -37,7 +37,7 @@ const teacherData = [
         "purple",
         [
             { text: "IELTS 8.5", textVi: "IELTS 8.5", color: "blue" },
-            { text: "8+ Years", textVi: "8+ Năm", color: "green" },
+            { text: "10+ Years", textVi: "10+ Năm", color: "green" },
             { text: "Writing Expert", textVi: "Chuyên Gia Viết", color: "purple" }
         ]
     ),

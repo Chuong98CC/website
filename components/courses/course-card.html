@@ -1,0 +1,47 @@
+<!-- Course Card Component Template -->
+<div class="course-card" data-course-id="">
+    <!-- Scroll anchor -->
+    <div class="course-anchor scroll-target"></div>
+    
+    <!-- Course card container -->
+    <div class="course-container rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all">
+        <!-- Course header -->
+        <div class="flex items-center mb-6">
+            <div class="course-icon-container w-16 h-16 rounded-2xl flex items-center justify-center mr-6">
+                <span class="course-icon text-white font-bold text-xl"></span>
+            </div>
+            <div>
+                <h3 class="course-title text-3xl font-bold mb-2" style="color: #1D4B3B;"></h3>
+                <p class="course-subtitle text-gray-600"></p>
+            </div>
+        </div>
+        
+        <!-- Course description section -->
+        <div class="bg-white rounded-2xl p-6 mb-6">
+            <h3 class="course-target-label font-semibold text-lg mb-3"></h3>
+            <p class="course-target-description text-gray-700 mb-4"></p>
+            <h3 class="course-goal-label font-semibold text-lg mb-3"></h3>
+            <p class="course-goal-description text-gray-700"></p>
+        </div>
+        
+        <!-- Course skills grid -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-xl p-4">
+                <h4 class="course-reading-title font-semibold mb-2">📚 Reading & Listening</h4>
+                <p class="course-reading-description text-sm text-gray-600"></p>
+            </div>
+            <div class="bg-white rounded-xl p-4">
+                <h4 class="course-speaking-title font-semibold mb-2">🗣️ Speaking</h4>
+                <p class="course-speaking-description text-sm text-gray-600"></p>
+            </div>
+            <div class="bg-white rounded-xl p-4">
+                <h4 class="course-writing-title font-semibold mb-2">✍️ Writing</h4>
+                <p class="course-writing-description text-sm text-gray-600"></p>
+            </div>
+            <div class="bg-white rounded-xl p-4">
+                <h4 class="course-target-title font-semibold mb-2">🎯 Target</h4>
+                <p class="course-target-band text-sm text-gray-600"></p>
+            </div>
+        </div>
+    </div>
+</div>

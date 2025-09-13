@@ -247,7 +247,7 @@ const courseTranslations = {
             writingTitle: "✍️ Writing",
             writingDescription: "Tập viết câu hoàn chỉnh, tập triển khai ý. Phân biệt được văn nói và văn viết trong IELTS",
             targetTitle: "🎯 Target",
-            targetBand: "Band 2.5 - Nền tảng vững chắc cho các level tiếp theo"
+            targetBand: "Band 3.0 - Nền tảng vững chắc cho các level tiếp theo"
         },
         cookies: {
             title: "Cấp Cookies",

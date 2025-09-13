@@ -30,7 +30,7 @@ const staffData = [
         "Quản Lý Hành Chính",
         "Manages all administrative operations, student enrollment, scheduling, and ensures smooth daily operations. Always ready to assist students with any queries or concerns.",
         "Quản lý tất cả các hoạt động hành chính, đăng ký học viên, lập lịch và đảm bảo hoạt động hàng ngày diễn ra suôn sẻ. Luôn sẵn sàng hỗ trợ học viên với mọi thắc mắc và quan ngại.",
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
+        "https://scontent-phx1-1.xx.fbcdn.net/v/t39.30808-6/513867470_1303138491820118_4889116908656270509_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=f727a1&_nc_ohc=xz-x-ApXJUIQ7kNvwHnHSs5&_nc_oc=Adn6IUhQ1X-NTKZa56jYAwYow-JGUrHNy4POyDxMrxdh8XPGVpphy1ZgTR52sVkvKc0&_nc_zt=23&_nc_ht=scontent-phx1-1.xx&_nc_gid=H4v5YyqYvcQUcx7JHe7kgw&oh=00_Afb6EGDWXGGpw6B3K36TTGJPLCs98RaIIprD_BZ5KfcbFQ&oe=68CA969D",
         "Admin Manager",
         "Quản Lý Hành Chính",
         "emerald",
@@ -47,7 +47,7 @@ const staffData = [
         "IELTS Buddy & Hỗ Trợ IT",
         "Provides technical support for online learning platforms and assists students with digital tools. Also serves as IELTS Buddy for additional practice sessions and study guidance.",
         "Cung cấp hỗ trợ kỹ thuật cho các nền tảng học trực tuyến và hỗ trợ học viên với các công cụ kỹ thuật số. Cũng đóng vai trò như IELTS Buddy cho các buổi luyện tập bổ sung và hướng dẫn học tập.",
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
+        "https://scontent-phx1-1.xx.fbcdn.net/v/t39.30808-6/513087095_1303137951820172_282783202588533902_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_ohc=GACYbXRn9gMQ7kNvwHFw-e_&_nc_oc=AdkfrRyt9aTYxoEGBBabNufwvADUl0WuYWzoAvg3JyGMA3ENyj1qrJa8MMIumaCG9ZE&_nc_zt=23&_nc_ht=scontent-phx1-1.xx&_nc_gid=JeIdAXEP79MYHtPcXiC1XQ&oh=00_AfYdob5HdHhBFPxjgHPrwJk7gKh5SYwKWbfI2HCZIXNU-w&oe=68CA8186",
         "IELTS Buddy",
         "IELTS Buddy",
         "cyan",
@@ -56,23 +56,6 @@ const staffData = [
             { text: "IT Support", textVi: "Hỗ Trợ IT", color: "blue" },
             { text: "IELTS Buddy", textVi: "IELTS Buddy", color: "green" },
             { text: "Digital Tools", textVi: "Công Cụ Số", color: "purple" }
-        ]
-    ),
-    createStaff(
-        "Minh Anh",
-        "Student Advisor",
-        "Cố Vấn Học Viên",
-        "Provides academic counseling and helps students choose the right courses for their goals. Excellent communication skills and deep understanding of student needs and learning paths.",
-        "Cung cấp tư vấn học tập và giúp học viên chọn các khóa học phù hợp với mục tiêu của họ. Kỹ năng giao tiếp xuất sắc và hiểu biết sâu sắc về nhu cầu học viên và lộ trình học tập.",
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80",
-        "Student Advisor",
-        "Cố Vấn Học Viên",
-        "rose",
-        "pink",
-        [
-            { text: "Counseling", textVi: "Tư Vấn", color: "blue" },
-            { text: "Course Planning", textVi: "Lập Kế Hoạch Khóa Học", color: "green" },
-            { text: "Student Care", textVi: "Chăm Sóc Học Viên", color: "purple" }
         ]
     )
 ];

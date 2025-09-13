@@ -31,7 +31,7 @@
     <section class="py-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="font-heading text-4xl font-bold text-text mb-4">Our IELTS Coaches & Buddies</h2>
+                <h2 class="font-heading text-4xl font-bold text-text mb-4">Our IELTS Coaches</h2>
                 <p class="text-lg text-gray-600">Expert educators with years of experience in IELTS preparation</p>
             </div>
             
@@ -41,8 +41,22 @@
         </div>
     </section>
 
+    <!-- IELTS Tutors Section -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold text-text mb-4">Our IELTS Tutors</h2>
+                <p class="text-lg text-gray-600">Dedicated peer mentors and former students who provide additional support and guidance</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 buddy-grid">
+                <!-- Buddy cards will be dynamically generated here -->
+            </div>
+        </div>
+    </section>
+
     <!-- Back Office Team Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-green-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="font-heading text-4xl font-bold text-text mb-4">Back Office Team</h2>
@@ -83,8 +97,10 @@
                 title: "Teachers - The English Studio Da Nang",
                 heroTitle: "OUR <span style='color: #D4A933;'>TEAM</span>",
                 heroDescription: "Meet our experienced IELTS coaches and dedicated support team who will guide you on your English learning journey",
-                coachesTitle: "Our IELTS Coaches & Buddies",
+                coachesTitle: "Our IELTS Coaches",
                 coachesSubtitle: "Expert educators with years of experience in IELTS preparation",
+                tutorsTitle: "Our IELTS Tutors",
+                tutorsSubtitle: "Dedicated peer mentors and former students who provide additional support and guidance",
                 backOfficeTitle: "Back Office Team",
                 backOfficeSubtitle: "Our dedicated support staff ensuring smooth operations and excellent student experience",
                 ctaTitle: "Ready to Meet Your Coach?",
@@ -95,8 +111,10 @@
                 title: "Giảng Viên - The English Studio Da Nang",
                 heroTitle: "<span style='color: #D4A933;'>ĐỘI NGŨ</span> CỦA CHÚNG TÔI",
                 heroDescription: "Gặp gỡ đội ngũ giáo viên IELTS giàu kinh nghiệm và đội ngũ hỗ trợ tận tâm sẽ hướng dẫn bạn trên hành trình học tiếng Anh",
-                coachesTitle: "Giảng Viên & Bạn Đồng Hành IELTS",
+                coachesTitle: "Giảng Viên IELTS",
                 coachesSubtitle: "Giáo viên chuyên nghiệp với nhiều năm kinh nghiệm luyện thi IELTS",
+                tutorsTitle: "Gia Sư IELTS",
+                tutorsSubtitle: "Những người cố vấn đồng đẳng tận tâm và cựu học viên cung cấp hỗ trợ và hướng dẫn bổ sung",
                 backOfficeTitle: "Đội Ngũ Hành Chính",
                 backOfficeSubtitle: "Đội ngũ hỗ trợ tận tâm đảm bảo hoạt động suôn sẻ và trải nghiệm học viên xuất sắc",
                 ctaTitle: "Sẵn Sàng Gặp Giáo Viên Của Bạn?",
@@ -189,8 +207,9 @@
             }
 
             // Update coaches section
-            const coachesTitle = document.querySelector('h2.font-heading');
-            const coachesSubtitle = document.querySelector('.py-20 .text-lg.text-gray-600');
+            const coachesSection = document.querySelector('.py-20:not(.bg-gradient-to-br)');
+            const coachesTitle = coachesSection?.querySelector('h2.font-heading');
+            const coachesSubtitle = coachesSection?.querySelector('.text-lg.text-gray-600');
 
             if (coachesTitle) {
                 coachesTitle.textContent = translations[currentLanguage].coachesTitle;
@@ -199,9 +218,22 @@
                 coachesSubtitle.textContent = translations[currentLanguage].coachesSubtitle;
             }
 
+            // Update tutors section
+            const tutorsSection = document.querySelector('.bg-gradient-to-br.from-indigo-50');
+            const tutorsTitle = tutorsSection?.querySelector('h2.font-heading');
+            const tutorsSubtitle = tutorsSection?.querySelector('.text-lg.text-gray-600');
+
+            if (tutorsTitle) {
+                tutorsTitle.textContent = translations[currentLanguage].tutorsTitle;
+            }
+            if (tutorsSubtitle) {
+                tutorsSubtitle.textContent = translations[currentLanguage].tutorsSubtitle;
+            }
+
             // Update back office section
-            const backOfficeTitle = document.querySelector('.py-20.bg-gradient-to-br h2.font-heading');
-            const backOfficeSubtitle = document.querySelector('.py-20.bg-gradient-to-br .text-lg.text-gray-600');
+            const backOfficeSection = document.querySelector('.bg-gradient-to-br.from-gray-50.to-green-50');
+            const backOfficeTitle = backOfficeSection?.querySelector('h2.font-heading');
+            const backOfficeSubtitle = backOfficeSection?.querySelector('.text-lg.text-gray-600');
 
             if (backOfficeTitle) {
                 backOfficeTitle.textContent = translations[currentLanguage].backOfficeTitle;
@@ -225,17 +257,26 @@
                 ctaButton.textContent = translations[currentLanguage].ctaButton;
             }
 
-            // Update dynamic teacher and staff cards language
+            // Update dynamic cards language
             if (typeof updateCardLanguage === 'function') {
                 updateCardLanguage(currentLanguage);
+            }
+            if (typeof updateBuddyLanguage === 'function') {
+                updateBuddyLanguage(currentLanguage);
+            }
+            if (typeof updateStaffLanguage === 'function') {
+                updateStaffLanguage(currentLanguage);
             }
         }
 
         // Initialize language toggle
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize dynamic teacher and staff cards
+            // Initialize dynamic teacher, buddy, and staff cards
             if (typeof renderTeacherCards === 'function') {
                 renderTeacherCards(currentLanguage);
+            }
+            if (typeof renderBuddyCards === 'function') {
+                renderBuddyCards(currentLanguage);
             }
             if (typeof renderStaffCards === 'function') {
                 renderStaffCards(currentLanguage);
@@ -300,12 +341,13 @@
     </script>
 
     <!-- Load modular JavaScript files in correct order -->
-    <script src="js/card-renderer.js"></script>  <!-- Base CardRenderer class -->
-    <script src="js/teachers/teachers.js"></script>      <!-- Teacher data and functions -->
-    <script src="js/teachers/staff.js"></script>         <!-- Staff data and functions -->
-    <script src="js/teachers/why-choose-team.js"></script> <!-- Why Choose Team component -->
+    <script src="js/card-renderer.js?v=1.1"></script>  <!-- Base CardRenderer class -->
+    <script src="js/teachers/teachers.js?v=1.1"></script>      <!-- Teacher data and functions -->
+    <script src="js/teachers/buddies.js?v=1.1"></script>         <!-- Buddy data and functions -->
+    <script src="js/teachers/staff.js?v=1.1"></script>         <!-- Staff data and functions -->
+    <script src="js/teachers/why-choose-team.js?v=1.1"></script> <!-- Why Choose Team component -->
 
     <!-- Load common JavaScript functionality -->
-    <script src="js/common.js"></script>
+    <script src="js/common.js?v=1.1"></script>
 </body>
 </html>

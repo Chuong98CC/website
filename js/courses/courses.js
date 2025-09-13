@@ -75,9 +75,15 @@ const courseTranslations = {
             title: "Level Candy",
             subtitle: "Beginner Level - IELTS Foundation",
             targetLabel: "For:",
-            targetDescription: "Not for complete beginners or those with weak foundations. For students who haven't been exposed to IELTS much or have limited English experience.",
+            targetDescription: "The Candy Class is designed for beginner learners who are just starting their English journey. ",
             goalLabel: "Goals:",
-            goalDescription: "Orientation and introduction to IELTS. Focus on reviewing key grammar points, building basic topic vocabulary, and IELTS vocabulary.",
+            goalDescription: [
+                "Build a strong foundation in basic grammar, speaking, and listening",
+                "Boost everyday communication skills through interactive practice",
+                "Expand vocabulary through familiar topics (family, food, daily routines, hobbies)",
+                "Distinguish between communication English and academic English",
+                "Learn to use language in both real-life and study contexts"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Get familiar with simple exercises, short passages, practice analysis, and understanding question requirements",
             speakingTitle: "🗣️ Speaking",
@@ -85,7 +91,7 @@ const courseTranslations = {
             writingTitle: "✍️ Writing",
             writingDescription: "Practice writing complete sentences, practice idea development. Distinguish between spoken and written language in IELTS",
             targetTitle: "🎯 Target",
-            targetBand: "Band 2.5 - Solid foundation for next levels"
+            targetBand: "Band 3.0 - Solid foundation for next levels"
         },
         cookies: {
             title: "Level Cookies",
@@ -93,7 +99,13 @@ const courseTranslations = {
             targetLabel: "For:",
             targetDescription: "Students who have studied IELTS for less than 3 months (entry test score from 3.0+) or students who have completed Level Candy.",
             goalLabel: "Goals:",
-            goalDescription: "Students begin to get familiar with IELTS format and become acquainted with different question types across all skills.",
+            goalDescription: [
+                "Get familiar with IELTS format and structure",
+                "Learn different question types across all four skills",
+                "Develop basic test-taking strategies",
+                "Build confidence in English communication",
+                "Prepare for intermediate IELTS levels"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Work on short exercises, focus on passage analysis and vocabulary upgrading",
             speakingTitle: "🗣️ Speaking",
@@ -109,7 +121,13 @@ const courseTranslations = {
             targetLabel: "For:",
             targetDescription: "Students who have studied IELTS before (entry test score from 4.0+) or students who have completed Level Cookies.",
             goalLabel: "Requirements:",
-            goalDescription: "Students should have basic IELTS knowledge and question types (this level still reviews writing theory).",
+            goalDescription: [
+                "Have basic IELTS knowledge and question types understanding",
+                "Review writing theory and enhance skills",
+                "Work on longer and more challenging exercises",
+                "Enhance passage analysis skills",
+                "Build B1&B2 vocabulary level"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Start working on longer and more challenging exercises, enhance passage analysis skills",
             speakingTitle: "🗣️ Speaking",
@@ -125,7 +143,13 @@ const courseTranslations = {
             targetLabel: "For:",
             targetDescription: "Students who have studied IELTS before (entry test score from 4.5+) or students who have completed Level Donuts.",
             goalLabel: "Requirements:",
-            goalDescription: "Students should have IELTS foundation and want to improve skills to achieve higher scores.",
+            goalDescription: [
+                "Have solid IELTS foundation knowledge",
+                "Want to improve skills to achieve higher scores",
+                "Work with longer reading and listening passages",
+                "Enhance academic vocabulary",
+                "Develop logical thinking and argumentation skills"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Get familiar with longer reading and listening passages, gradually increasing difficulty, enhance academic vocabulary",
             speakingTitle: "🗣️ Speaking",
@@ -141,7 +165,13 @@ const courseTranslations = {
             targetLabel: "For:",
             targetDescription: "Students who have studied IELTS before (entry test score 5.0+) or students who have completed Level Donuts.",
             goalLabel: "Requirements:",
-            goalDescription: "Students should have solid IELTS knowledge and basic test-taking skills across all areas.",
+            goalDescription: [
+                "Have solid IELTS knowledge and basic test-taking skills",
+                "Work on complex passages and recordings",
+                "Enhance speed and accuracy in all question types",
+                "Develop fluency and coherence",
+                "Master complex grammar structures and advanced vocabulary"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Work on complex passages and recordings, enhance speed and accuracy in all question types",
             speakingTitle: "🗣️ Speaking",
@@ -157,7 +187,13 @@ const courseTranslations = {
             targetLabel: "For:",
             targetDescription: "Students with solid IELTS foundation (entry test score from 6.0+) or students who have completed Level Burgers.",
             goalLabel: "Requirements:",
-            goalDescription: "Students should have strong IELTS foundation and want to achieve high band scores for academic or professional purposes.",
+            goalDescription: [
+                "Have strong IELTS foundation",
+                "Want to achieve high band scores for academic or professional purposes",
+                "Master complex academic texts and recordings",
+                "Achieve near-native comprehension levels",
+                "Produce sophisticated academic writing with advanced linguistic features"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Master complex academic texts and recordings, achieve near-native comprehension levels",
             speakingTitle: "🗣️ Speaking",
@@ -173,7 +209,13 @@ const courseTranslations = {
             targetLabel: "For:",
             targetDescription: "Elite students with strong IELTS foundation (entry test score 6.5+) targeting band 7.0+ for universities or immigration.",
             goalLabel: "Requirements:",
-            goalDescription: "Students must demonstrate advanced English proficiency and strategic thinking for high-stakes IELTS performance.",
+            goalDescription: [
+                "Demonstrate advanced English proficiency and strategic thinking",
+                "Master the most challenging academic materials",
+                "Achieve consistent high performance under time pressure",
+                "Demonstrate native-like fluency with sophisticated vocabulary",
+                "Produce publication-quality academic writing"
+            ],
             readingTitle: "�‍🏫 Expert Coaching",
             readingDescription: "Master the most challenging academic materials, achieve consistent high performance under time pressure",
             speakingTitle: "� Mock Tests",
@@ -189,9 +231,15 @@ const courseTranslations = {
             title: "Cấp Candy",
             subtitle: "Cấp Độ Cơ Bản - Nền Tảng IELTS",
             targetLabel: "Dành cho:",
-            targetDescription: "Không dành cho vỡ lòng, mất gốc, mất căn bản. Dành cho những bạn chưa làm quen với IELTS, chưa tiếp xúc nhiều với tiếng Anh.",
+            targetDescription: "Lớp Candy được thiết kế cho người học mới bắt đầu hành trình tiếng Anh.",
             goalLabel: "Mục tiêu:",
-            goalDescription: "Định hướng, giới thiệu về IELTS. Tập trung ôn lại một số chủ điểm ngữ pháp chính, bổ sung từ vựng cơ bản theo chủ đề, từ vựng về IELTS.",
+            goalDescription: [
+                "Xây dựng nền tảng vững chắc về ngữ pháp cơ bản, kỹ năng nghe và nói",
+                "Tăng cường kỹ năng giao tiếp hằng ngày thông qua thực hành tương tác",
+                "Mở rộng vốn từ vựng qua các chủ đề quen thuộc (gia đình, đồ ăn, thói quen hằng ngày, sở thích)",
+                "Phân biệt giữa tiếng Anh giao tiếp và tiếng Anh học thuật",
+                "Học cách sử dụng ngôn ngữ trong cả đời sống thực tế và trong học tập"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Làm quen các bài đơn giản, đoạn văn ngắn, tập phân tích, hiểu yêu cầu đề bài",
             speakingTitle: "🗣️ Speaking",
@@ -207,7 +255,13 @@ const courseTranslations = {
             targetLabel: "Dành cho:",
             targetDescription: "Những bạn đã từng học IELTS dưới 3 tháng (điểm test đầu vào từ 3.0+) hoặc học viên đã qua level Candy.",
             goalLabel: "Mục tiêu:",
-            goalDescription: "Các bạn bắt đầu tiếp xúc format IELTS, làm quen các dạng bài ở các kỹ năng.",
+            goalDescription: [
+                "Làm quen với format và cấu trúc IELTS",
+                "Học các dạng câu hỏi khác nhau trong cả bốn kỹ năng",
+                "Phát triển chiến lược làm bài cơ bản",
+                "Xây dựng sự tự tin trong giao tiếp tiếng Anh",
+                "Chuẩn bị cho các cấp độ IELTS trung cấp"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Làm các dạng bài ngắn, tập trung vào phân tích bài và nâng cấp từ vựng",
             speakingTitle: "🗣️ Speaking",
@@ -223,7 +277,13 @@ const courseTranslations = {
             targetLabel: "Dành cho:",
             targetDescription: "Những bạn đã từng học IELTS (điểm test đầu vào từ 4.0+) hoặc học viên đã qua level Cookies.",
             goalLabel: "Yêu cầu:",
-            goalDescription: "Các bạn đã có kiến thức cơ bản IELTS và các dạng bài (level này vẫn ôn lại lý thuyết Viết).",
+            goalDescription: [
+                "Đã có kiến thức cơ bản IELTS và các dạng bài",
+                "Ôn lại lý thuyết Viết và nâng cao kỹ năng",
+                "Làm các bài dài và thử thách hơn",
+                "Đẩy mạnh kỹ năng phân tích bài",
+                "Xây dựng vốn từ vựng B1&B2"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Bắt đầu làm các bài dài và thử thách hơn, đẩy mạnh kỹ năng phân tích bài",
             speakingTitle: "🗣️ Speaking",
@@ -239,7 +299,13 @@ const courseTranslations = {
             targetLabel: "Dành cho:",
             targetDescription: "Những bạn đã từng học IELTS (điểm test đầu vào từ 4.5+) hoặc học viên đã qua level Donuts.",
             goalLabel: "Yêu cầu:",
-            goalDescription: "Các bạn đã có nền tảng về IELTS và muốn nâng cao kỹ năng để đạt điểm cao hơn.",
+            goalDescription: [
+                "Đã có nền tảng về IELTS và muốn nâng cao kỹ năng",
+                "Muốn đạt điểm cao hơn trong IELTS",
+                "Làm quen với các bài đọc và nghe dài hơn",
+                "Đẩy mạnh từ vựng học thuật",
+                "Phát triển kỹ năng lập luận và tư duy logic"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Làm quen với các bài đọc và nghe dài, độ khó tăng dần, đẩy mạnh từ vựng học thuật",
             speakingTitle: "🗣️ Speaking",
@@ -255,7 +321,13 @@ const courseTranslations = {
             targetLabel: "Dành cho:",
             targetDescription: "Những bạn đã từng học IELTS (điểm test đầu vào 5.0+) hoặc học viên đã qua level Donuts.",
             goalLabel: "Yêu cầu:",
-            goalDescription: "Các bạn đã nắm chắc kiến thức IELTS và kỹ năng làm bài cơ bản ở các kỹ năng.",
+            goalDescription: [
+                "Đã nắm chắc kiến thức IELTS và kỹ năng làm bài cơ bản",
+                "Làm các bài phức tạp và nâng cao",
+                "Tăng tốc độ và độ chính xác trong tất cả dạng câu hỏi",
+                "Phát triển độ trôi chảy và mạch lạc",
+                "Thành thạo ngữ pháp phức tạp và từ vựng tinh tế"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Làm các bài phức tạp, nâng cao tốc độ và độ chính xác trong tất cả dạng câu hỏi",
             speakingTitle: "🗣️ Speaking",
@@ -271,7 +343,13 @@ const courseTranslations = {
             targetLabel: "Dành cho:",
             targetDescription: "Những bạn đã có nền tảng vững chắc về IELTS (điểm test đầu vào từ 6.0+) hoặc học viên đã qua level Burgers.",
             goalLabel: "Yêu cầu:",
-            goalDescription: "Các bạn đã có nền tảng IELTS mạnh mẽ và muốn đạt điểm cao cho mục đích học thuật hoặc nghề nghiệp.",
+            goalDescription: [
+                "Đã có nền tảng IELTS mạnh mẽ",
+                "Muốn đạt điểm cao cho mục đích học thuật hoặc nghề nghiệp",
+                "Thành thạo các văn bản và bài nghe học thuật phức tạp",
+                "Đạt mức hiểu biết gần như người bản ngữ",
+                "Tạo ra văn bản học thuật tinh tế với lập luận phức tạp"
+            ],
             readingTitle: "📚 Reading & Listening",
             readingDescription: "Thành thạo các văn bản và bài nghe học thuật phức tạp, đạt mức hiểu biết gần như người bản ngữ",
             speakingTitle: "🗣️ Speaking",
@@ -287,7 +365,13 @@ const courseTranslations = {
             targetLabel: "Dành cho:",
             targetDescription: "Học viên elite có nền tảng IELTS mạnh (điểm test đầu vào 6.5+) nhắm mục tiêu band 7.0+ cho đại học hoặc định cư.",
             goalLabel: "Yêu cầu:",
-            goalDescription: "Học viên phải thể hiện trình độ tiếng Anh nâng cao và tư duy chiến lược cho hiệu suất IELTS cao.",
+            goalDescription: [
+                "Thể hiện trình độ tiếng Anh nâng cao và tư duy chiến lược",
+                "Thành thạo các tài liệu học thuật thách thức nhất",
+                "Đạt hiệu suất cao ổn định dưới áp lực thời gian",
+                "Thể hiện độ trôi chảy như người bản ngữ",
+                "Tạo ra văn bản học thuật chất lượng xuất bản"
+            ],
             readingTitle: "�‍🏫 Expert Coaching",
             readingDescription: "Học viên được luyện tập với đề thi thật IELTS cùng giáo viên kinh nghiệm nhiều năm",
             speakingTitle: "� Mock Tests",
@@ -340,6 +424,16 @@ class CourseRenderer {
         const textColorClass = course.isIntensive ? 'text-white/90' : 'text-gray-700';
         const skillTextColorClass = course.isIntensive ? 'text-white/80' : 'text-gray-600';
 
+        // Handle goalDescription as array for bullet points
+        let goalDescriptionHTML = '';
+        if (Array.isArray(translation.goalDescription)) {
+            goalDescriptionHTML = `<ul class="list-disc list-inside space-y-2 ${textColorClass}">
+                ${translation.goalDescription.map(point => `<li>${point}</li>`).join('')}
+            </ul>`;
+        } else {
+            goalDescriptionHTML = `<p class="course-goal-description ${textColorClass}">${translation.goalDescription}</p>`;
+        }
+
         return `
         <div class="course-card" data-course-id="${courseId}">
             <!-- Scroll anchor -->
@@ -363,7 +457,7 @@ class CourseRenderer {
                     <h3 class="course-target-label font-semibold text-lg mb-3 ${course.skillColorClass}">${translation.targetLabel}</h3>
                     <p class="course-target-description ${textColorClass} mb-4">${translation.targetDescription}</p>
                     <h3 class="course-goal-label font-semibold text-lg mb-3 ${course.skillColorClass}">${translation.goalLabel}</h3>
-                    <p class="course-goal-description ${textColorClass}">${translation.goalDescription}</p>
+                    ${goalDescriptionHTML}
                 </div>
                 
                 <!-- Course skills grid -->

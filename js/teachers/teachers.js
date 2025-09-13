@@ -29,7 +29,7 @@ const teacherData = [
         "Head IELTS Coach",
         "Giảng Viên IELTS Chính",
         "Founder of TES with 10+ years of IELTS teaching experience. IELTS 8.5 overall score. Specialized in Writing and Speaking modules with innovative teaching methods.",
-        "Người sáng lập TES với hơn 8 năm kinh nghiệm giảng dạy IELTS. Điểm IELTS tổng thể 8.5. Chuyên về các phần thi Viết và Nói với phương pháp giảng dạy đổi mới.",
+        "Người sáng lập TES với hơn 10+ năm kinh nghiệm giảng dạy IELTS. Điểm IELTS tổng thể 8.5. Chuyên về các phần thi Viết và Nói với phương pháp giảng dạy đổi mới.",
         "https://scontent-phx1-1.xx.fbcdn.net/v/t39.30808-6/513698859_1303137511820216_2788626323466197141_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_ohc=nsRYJHwQ9LgQ7kNvwEumPGz&_nc_oc=AdkOQKTckYT7WCJCS8w9RPXHcU2rtXx_Oyr3oPi9NujDb6wPwyOaH33Uq9A5PWoQBT0&_nc_zt=23&_nc_ht=scontent-phx1-1.xx&_nc_gid=4QZboZFGhZpkDF3iZAcLkA&oh=00_AfZDeRx96xPfNwxNPapPexaKjJ0r9OLNdsUxtp5kXCIHOQ&oe=68CA83B2",
         "IELTS Coach",
         "Giảng Viên IELTS",
@@ -37,8 +37,8 @@ const teacherData = [
         "purple",
         [
             { text: "IELTS 8.5", textVi: "IELTS 8.5", color: "blue" },
+            { text: "TESOL", textVi: "Chứng chỉ TESOL", color: "purple" },
             { text: "10+ Years", textVi: "10+ Năm", color: "green" },
-            { text: "Writing Expert", textVi: "Chuyên Gia Viết", color: "purple" }
         ]
     ),
     createTeacher(
@@ -54,7 +54,7 @@ const teacherData = [
         "blue",
         [
             { text: "Native Speaker", textVi: "Người Bản Ngữ", color: "blue" },
-            { text: "TESOL", textVi: "TESOL", color: "green" },
+            { text: "TESOL", textVi: "Chứng chỉ TESOL", color: "green" },
             { text: "Speaking Expert", textVi: "Chuyên Gia Nói", color: "purple" }
         ]
     ),
@@ -62,34 +62,33 @@ const teacherData = [
         "Alex Nguyen",
         "Senior IELTS Coach",
         "Giảng Viên IELTS Cao Cấp",
-        "Senior coach with 6+ years experience. Specialized in Band 7.0+ score improvement strategies. Expert in all four IELTS modules with proven track record.",
-        "Giảng viên cao cấp với hơn 6 năm kinh nghiệm. Chuyên về các chiến lược cải thiện điểm số Band 7.0+. Chuyên gia trong cả bốn kỹ năng IELTS với thành tích đã được chứng minh.",
+        "Senior coach with 4+ years experience. Expert in all four IELTS modules with proven track record.",
+        "Giảng viên cao cấp với hơn 4 năm kinh nghiệm. Chuyên gia trong cả bốn kỹ năng IELTS với thành tích đã được chứng minh.",
         "https://scontent-phx1-1.xx.fbcdn.net/v/t39.30808-6/512719115_1303138461820121_5804855003617289996_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=f727a1&_nc_ohc=SvPxyktNSDoQ7kNvwGYQUlO&_nc_oc=Admwx7p2eEAdYsS0M5OUbM-gDLltMx9xizSkIRJgwVunOk8PetjNsQs79UbjDaa1AWs&_nc_zt=23&_nc_ht=scontent-phx1-1.xx&_nc_gid=2jPIdoxa3EZR9kgKQBD79A&oh=00_Afa85pUMenqJpLVr2Xaqxz0DBF3Rh8mns2Hn5HSNDfWUrg&oe=68CA8F4D",
         "IELTS Coach",
         "Giảng Viên IELTS",
         "purple",
         "pink",
         [
-            { text: "Band 7.0+ Expert", textVi: "Chuyên Gia Band 7.0+", color: "purple" },
-            { text: "6+ Years", textVi: "6+ Năm", color: "green" },
+            { text: "IELTS 8.0", textVi: "IELTS 8.0", color: "purple" },
+            { text: "4+ Years", textVi: "4+ Năm", color: "green" },
             { text: "All Skills", textVi: "Tất Cả Kỹ Năng", color: "blue" }
         ]
     ),
     createTeacher(
         "Halsey",
-        "IELTS Writing Specialist",
-        "Chuyên Gia IELTS Writing",
-        "IELTS Writing specialist with focus on Task 1 & Task 2 improvement. Helps students achieve Band 7+ in Writing module through systematic approach and personalized feedback.",
-        "Chuyên gia IELTS Writing tập trung vào cải thiện Task 1 & Task 2. Giúp học viên đạt Band 7+ trong phần thi Writing thông qua phương pháp có hệ thống và phản hồi cá nhân hóa.",
+        "Senior IELTS Coach",
+        "Giảng Viên IELTS Cao Cấp",
+        "IELTS Writing and Reading specialist. Develops students through systematic approach and personalized feedback.",
+        "Chuyên gia IELTS đọc và viết. Phát triển học viên thông qua phương pháp có hệ thống và phản hồi cá nhân hóa.",
         "https://scontent-phx1-1.xx.fbcdn.net/v/t39.30808-6/497824991_1267129962087638_8984087693444569673_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=f727a1&_nc_ohc=3YCp9OO4IAsQ7kNvwEskt0O&_nc_oc=AdmorNoSYk4CNrcrAFGO6wvj0NWMedewxtBenhiENec_3Tw_5wCcDueYIkGdTmWL18A&_nc_zt=23&_nc_ht=scontent-phx1-1.xx&_nc_gid=PvN2tB-WRhC55TdZ5l2J1A&oh=00_AfbWmHmMURtB9d4WxnbgDO3u9rZibXzOrbO4j7pwqRMqMw&oe=68CA6544",
         "IELTS Coach",
         "Giảng Viên IELTS",
         "rose",
         "orange",
         [
+            { text: "IELTS 7.5", textVi: "IELTS 7.5", color: "orange" },
             { text: "Writing Expert", textVi: "Chuyên Gia Viết", color: "rose" },
-            { text: "Band 7+ Focus", textVi: "Tập Trung Band 7+", color: "orange" },
-            { text: "Task 1 & 2", textVi: "Task 1 & 2", color: "purple" }
         ]
     ),
     createTeacher(

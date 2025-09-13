@@ -1,6 +1,18 @@
 <!-- Hero Section -->
-<section class="pt-32 pb-20" style="background-color: #1D4B3B;">
-    <div class="max-w-7xl mx-auto px-6 text-center">
+<section class="pt-32 pb-20 relative overflow-hidden group" style="background-color: #1D4B3B;">
+    <!-- Background Image with Hover Effect -->
+    <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out">
+        <img src="https://scontent-phx1-1.xx.fbcdn.net/v/t39.30808-6/488206848_1225479312919370_3819112202925350375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=f727a1&_nc_ohc=pl6I7wsqWc4Q7kNvwEeVhk_&_nc_oc=Admp5QVADaGz-c6rzNy_L9_CV1DfC1xjsXxXQHHksnYSIUAC0FavSwpusqWVa4sZZMs&_nc_zt=23&_nc_ht=scontent-phx1-1.xx&_nc_gid=QAqVvSslYmfxNEH-vCHbLQ&oh=00_AfYRTHiLJLG1g9P7xjU4ugGrSYqxmT8bDtODlgx2tZOHZA&oe=68CB707E" 
+             alt="The English Studio Background" 
+             class="w-full h-full object-cover opacity-70">
+        <!-- Green overlay to maintain readability while showing more image -->
+        <div class="absolute inset-0 bg-gradient-to-br from-green-900/40 via-green-800/30 to-green-900/40"></div>
+        <!-- Additional overlay for text contrast -->
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(29, 75, 59, 0.50) 0%, rgba(29, 75, 59, 0.30) 50%, rgba(29, 75, 59, 0.50) 100%)"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
         <h1 class="hero-title text-6xl font-bold mb-6 text-white">
             <span class="hero-main-text">MASTER ENGLISH WITH</span><br>
             <span class="hero-accent-1" style="color: #D4A933;">CONFIDENCE</span> AND <span class="hero-accent-2" style="color: #D4A933;">SUCCESS</span>!

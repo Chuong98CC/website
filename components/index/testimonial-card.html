@@ -1,0 +1,38 @@
+<!-- Testimonial Card Component -->
+<div class="group bg-white hover:bg-gradient-to-br hover:from-{{gradientStart}}-100 hover:via-{{gradientEnd}}-100 hover:to-{{gradientStart}}-200 rounded-3xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 hover:scale-105 hover:shadow-{{gradientStart}}-300/20 border-l-4" style="border-left-color: {{borderColor}};">
+    <div class="relative mb-6">
+        <!-- Shining ring effect on hover -->
+        <div class="absolute inset-0 w-40 h-40 mx-auto rounded-full bg-gradient-to-r from-{{gradientStart}}-400 via-{{gradientEnd}}-500 to-{{gradientStart}}-400 opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-500 group-hover:scale-125"></div>
+        
+        <!-- Main profile image container -->
+        <div class="relative w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-{{gradientStart}}-400 to-{{gradientEnd}}-500 p-1 group-hover:from-{{gradientStart}}-500 group-hover:to-{{gradientEnd}}-600 group-hover:shadow-lg group-hover:shadow-{{gradientStart}}-500/50 group-hover:scale-125 transition-all duration-500">
+            <div class="w-full h-full rounded-full bg-white flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-{{gradientStart}}-50 transition-all duration-500">
+                <img src="{{imageUrl}}" alt="{{name}}" class="w-36 h-36 rounded-full object-cover transition-all duration-500">
+            </div>
+        </div>
+        
+        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 group-hover:scale-110 transition-transform duration-500">
+            <div class="bg-gradient-to-r from-{{gradientStart}}-500 to-{{gradientEnd}}-500 text-white px-4 py-1 rounded-full text-sm font-semibold group-hover:from-{{gradientStart}}-600 group-hover:to-{{gradientEnd}}-600 group-hover:shadow-lg transition-all duration-500">
+                {{achievement}}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Stars Rating -->
+    <div class="flex justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+        <div class="flex space-x-1" style="color: {{borderColor}};">
+            {{starsHtml}}
+        </div>
+    </div>
+    
+    <!-- Testimonial Text -->
+    <div class="text-center mb-6">
+        <p class="text-gray-800 leading-relaxed italic testimonial-text group-hover:text-gray-900 transition-colors duration-500" data-en="{{textEn}}" data-vi="{{textVi}}">{{textEn}}</p>
+    </div>
+    
+    <!-- Author Info -->
+    <div class="text-center">
+        <h3 class="font-heading text-xl font-bold mb-1 group-hover:text-{{gradientStart}}-600 transition-colors duration-500 testimonial-name" data-en="{{nameEn}}" data-vi="{{nameVi}}">{{nameEn}}</h3>
+        <p class="text-sm font-semibold testimonial-title group-hover:text-{{gradientEnd}}-600 transition-colors duration-500" data-en="{{titleEn}}" data-vi="{{titleVi}}" style="color: {{borderColor}};">{{titleEn}}</p>
+    </div>
+</div>

@@ -8,78 +8,30 @@
             </blockquote>
         </div>
         
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4 testimonial-card" style="border-left-color: #D4A933;">
-                <div class="flex items-center mb-4">
-                    <div class="flex" style="color: #D4A933;">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                    </div>
-                </div>
-                <p class="text-black mb-6 leading-relaxed testimonial-text-1">
-                    "Ở 'Té' em không học IELTS mà học mindset, học lối tư duy cởi mở thông qua các buổi debate và 'bị bắt' nói. Việc học tiếng Anh của em dễ dàng và đỡ áp lực hơn hẳn."
-                </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: #D4A933;">
-                        <span class="text-white font-semibold">TN</span>
-                    </div>
-                    <div>
-                        <p class="font-semibold testimonial-name-1" style="color: #1D4B3B;">Tran Thi Thao Nguyen</p>
-                        <p class="text-sm font-semibold testimonial-title-1" style="color: #D4A933;">IELTS 7.0</p>
-                    </div>
-                </div>
-            </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8" id="testimonials-grid">
+            <!-- Testimonial cards will be dynamically inserted here -->
             
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4 testimonial-card" style="border-left-color: #3B82F6;">
-                <div class="flex items-center mb-4">
-                    <div class="flex" style="color: #3B82F6;">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
-                        </svg>
-                    </div>
+            <!-- Facebook Reviews Link Card -->
+            <div class="group bg-gradient-to-br from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 rounded-3xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 hover:scale-105 border-2 border-blue-200 hover:border-blue-300 flex flex-col items-center justify-center text-center min-h-[400px]">
+                <!-- Facebook Icon -->
+                <div class="w-20 h-20 mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
                 </div>
-                <p class="text-black mb-6 leading-relaxed testimonial-text-2">
-                    "Ở Té mình không chỉ được học IELTS, mà còn được chỉ cách sử dụng ngôn ngữ sao cho được hay, được tự nhiên; còn là thái độ học và cải thiện lối tư duy."
+                
+                <!-- Content -->
+                <h3 class="font-heading text-xl font-bold mb-3 text-blue-700 group-hover:text-blue-800 transition-colors duration-500">
+                    <span class="facebook-reviews-title" data-en="More Reviews" data-vi="Thêm Đánh Giá">More Reviews</span>
+                </h3>
+                
+                <p class="text-blue-600 mb-6 leading-relaxed group-hover:text-blue-700 transition-colors duration-500">
+                    <span class="facebook-reviews-text" data-en="See what our students say about us on Facebook" data-vi="Xem học viên nói gì về chúng tôi trên Facebook">See what our students say about us on Facebook</span>
                 </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: #3B82F6;">
-                        <span class="text-white font-semibold">NT</span>
-                    </div>
-                    <div>
-                        <p class="font-semibold testimonial-name-2" style="color: #1D4B3B;">Nguyễn Thiện Anh Thi</p>
-                        <p class="text-sm font-semibold testimonial-title-2" style="color: #3B82F6;">Student of TES</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all border-l-4 testimonial-card" style="border-left-color: #10B981;">
-                <div class="flex items-center mb-4">
-                    <div class="flex" style="color: #10B981;">
+                
+                <!-- Star Rating -->
+                <div class="flex justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                    <div class="flex space-x-1 text-yellow-400">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
                             <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
                         </svg>
@@ -97,18 +49,14 @@
                         </svg>
                     </div>
                 </div>
-                <p class="text-black mb-6 leading-relaxed testimonial-text-3">
-                    "Trung tâm mang lại cho mình cảm giác thoải mái khi học. Học theo cách đúng nghĩa tiếng Anh tư duy. TES is my second home! 🫶🏻🥰"
-                </p>
-                <div class="flex items-center">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center mr-4" style="background-color: #10B981;">
-                        <span class="text-white font-semibold">HH</span>
-                    </div>
-                    <div>
-                        <p class="font-semibold testimonial-name-3" style="color: #1D4B3B;">Hong Hanh</p>
-                        <p class="text-sm font-semibold testimonial-title-3" style="color: #10B981;">Student of TES</p>
-                    </div>
-                </div>
+                
+                <!-- Call to Action Button -->
+                <a href="https://www.facebook.com/TheEnglishStudiodn/reviews" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform group-hover:scale-105 shadow-lg hover:shadow-xl">
+                    <span class="facebook-reviews-button" data-en="View on Facebook" data-vi="Xem trên Facebook">View on Facebook</span>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
